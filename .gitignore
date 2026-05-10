@@ -1,0 +1,49 @@
+# dependencies
+node_modules/
+**/node_modules/
+
+# build outputs
+.next/
+dist/
+build/
+out/
+**/.next/
+**/dist/
+**/build/
+
+# env files — never commit secrets
+.env
+.env.local
+.env.*.local
+**/.env
+**/.env.local
+**/.env.*.local
+
+# logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# editor / OS noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# local Postgres volume (docker-compose)
+postgres-data/
+**/postgres-data/
+
+# cache
+.cache/
+.turbo/
+.eslintcache
+
+# coverage / test
+coverage/
+.nyc_output/
+
+# typescript build info
+*.tsbuildinfo

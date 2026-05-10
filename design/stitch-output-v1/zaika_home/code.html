@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-container": "#34704d",
+                    "on-tertiary-container": "#7a0e07",
+                    "on-secondary-fixed": "#002110",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed": "#410000",
+                    "primary-fixed-dim": "#ffb878",
+                    "surface-container-high": "#f0e6e0",
+                    "on-error": "#ffffff",
+                    "primary-fixed": "#ffdcc1",
+                    "tertiary-fixed": "#ffdad5",
+                    "on-surface-variant": "#534437",
+                    "tertiary": "#ab3326",
+                    "on-background": "#1f1b17",
+                    "background": "#fff8f4",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed-variant": "#115131",
+                    "on-primary-fixed": "#2e1500",
+                    "tertiary-container": "#ff816f",
+                    "on-primary-container": "#5c3100",
+                    "inverse-surface": "#34302b",
+                    "surface-variant": "#eae1da",
+                    "surface-dim": "#e1d8d2",
+                    "secondary-fixed-dim": "#96d4aa",
+                    "on-error-container": "#93000a",
+                    "secondary-container": "#b1f1c5",
+                    "surface-bright": "#fff8f4",
+                    "on-surface": "#1f1b17",
+                    "secondary-fixed": "#b1f1c5",
+                    "primary": "#8e4f00",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed-variant": "#8a1b12",
+                    "secondary": "#2e6a47",
+                    "surface": "#fff8f4",
+                    "outline-variant": "#d9c2b2",
+                    "surface-container-highest": "#eae1da",
+                    "error": "#ba1a1a",
+                    "primary-container": "#e8923c",
+                    "surface-container": "#f6ece5",
+                    "inverse-on-surface": "#f9efe8",
+                    "on-primary-fixed-variant": "#6c3a00",
+                    "on-primary": "#ffffff",
+                    "outline": "#867465",
+                    "on-secondary": "#ffffff",
+                    "surface-container-low": "#fcf2eb",
+                    "tertiary-fixed-dim": "#ffb4a8",
+                    "surface-tint": "#8e4f00",
+                    "inverse-primary": "#ffb878"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xxl": "48px",
+                    "sm": "8px",
+                    "xs": "4px",
+                    "md": "16px",
+                    "xl": "32px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "title-lg": ["Fraunces"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "headline-md": ["Fraunces"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "display-xl": ["Fraunces"],
+                    "caption": ["Plus Jakarta Sans"],
+                    "body-sm": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "title-lg": ["28px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "label-md": ["13px", {"lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "headline-md": ["22px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "body-lg": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "display-xl": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>.tactile-grain {
+    position: relative
+    }
+.tactile-grain::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.03;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDLNEDUPzI1ufczlkGwY1reAQirdx_Rm1niT9uqSYLzGstrAbd6fjnBOSIxPIcudb8QDSSFyi0o_QrsdGojKcX1vvo16e3xEcTEHNR7LbGBg5T5Fa9S0r8Tv7FmfZC_dTXYi-HRzv_8LmMLiet344AJRhXQPwinRKZn2gIiilIEi7-08aobMl8WfZmDV1GkUfQk8LbnEP6ozT6D0kxN1Vuc-ZMp2Jd5UG2vh7l6XkuGvjitw3aazTNnLG2VXziW4_rlT3zKvBIzR96A);
+    z-index: 1
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-lg min-h-screen tactile-grain">
+<!-- TopAppBar -->
+<header class="bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-md docked full-width top-0 z-50 shadow-[0_4px_16px_rgba(31,27,23,0.06)] dark:shadow-none flex justify-between items-center w-full px-md py-sm sticky">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" data-icon="restaurant_menu">restaurant_menu</span>
+<h1 class="font-title-lg text-title-lg font-bold text-primary dark:text-primary-fixed-dim tracking-tight">Zaika</h1>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container active:scale-95 transition-transform duration-200 cursor-pointer">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="A close-up professional headshot of a person with a warm, welcoming expression. The lighting is soft and natural, emphasizing a high-end, clean editorial aesthetic. The background is a blurred, warm ivory tone that complements the luxurious and modern hospitality theme of the app. The overall mood is sophisticated and personal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMD9uQGF8vzwcYgx6ztdEsxAdhlXbNt1oOlYM1mY3ejf1Cew_MbckWz2I4reHFDVwnwDl7Zc1JzF5BdrstMUkRI8NWC5psvY5kKBjDYuNHVNJE5kgSTlBd-6aIrWyvjCUKJzv9sFLk9bZs7EjGAhb8bLzIIXYOjQOniEocVnJMmD_IDWpwyQuaccneVz6hDkATlJ28nxQNeKfBhtYmsu1fiyKfxbN8xrZuz6jVafd2VRJZnTQuYDTd2OftfgnFL7Jf5aPauVBvEsFu"/>
+</div>
+</header>
+<main class="px-md pt-lg pb-xxl max-w-2xl mx-auto space-y-xl">
+<!-- Hero Section -->
+<section class="relative">
+<div class="bg-surface-container-low rounded-xl p-lg shadow-[0_4px_16px_rgba(31,27,23,0.06)] space-y-md border border-outline-variant/20">
+<div class="flex flex-col space-y-xs">
+<div class="flex items-center gap-xs text-secondary">
+<span class="material-symbols-outlined text-[18px]" data-icon="location_on">location_on</span>
+<span class="font-label-md text-label-md">You're at</span>
+</div>
+<h2 class="font-title-lg text-title-lg text-on-surface">Cafe Mocha</h2>
+<p class="font-caption text-caption text-outline">47 people scanned this menu this month</p>
+</div>
+<div class="space-y-sm pt-sm">
+<button class="w-full py-md bg-primary-container text-on-primary-container rounded-full font-label-md text-label-md hover:opacity-80 transition-opacity active:scale-95 flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined text-[20px]" data-icon="bookmark">bookmark</span>
+                        Use saved menu
+                    </button>
+<button class="w-full py-md border-2 border-primary text-primary rounded-full font-label-md text-label-md hover:bg-primary-fixed/20 transition-colors active:scale-95 flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined text-[20px]" data-icon="qr_code_scanner">qr_code_scanner</span>
+                        Scan a new menu
+                    </button>
+</div>
+</div>
+</section>
+<!-- Recent Activity -->
+<section class="space-y-md">
+<div class="flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-on-surface">Recent activity</h3>
+<button class="text-primary font-label-md text-label-md hover:opacity-80">View all</button>
+</div>
+<div class="flex overflow-x-auto gap-md pb-md no-scrollbar">
+<!-- Activity Card 1 -->
+<div class="min-w-[200px] bg-surface-container-lowest rounded-lg p-md shadow-sm border border-outline-variant/10 active:scale-95 transition-all">
+<div class="w-full h-24 rounded-lg overflow-hidden mb-sm bg-surface-variant">
+<img alt="Paneer Lababdar" class="w-full h-full object-cover" data-alt="A beautifully plated dish of Paneer Lababdar in a traditional ceramic bowl, featuring rich tomato gravy and garnished with fresh cream and coriander. The lighting is warm and cinematic, highlighting the vibrant colors and creamy texture. The setting is a minimalist, modern Indian cafe with soft ivory surfaces and warm wood accents, evoking a sense of refined digital hospitality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAkoNLjyW7Y06oV54BdtEi7a7PCmzQU8uOUho1MAyJriYHKjluEbmxG0gB6h-MshamGGS8aUcAQv3ZKnC86YsRQu0AWO_8HsLZgh6cj-dmCtenpyyUuACBHZzomX3aXRCX9d7_9jflzbk3yWrsMB-LBh5ewGQl0suyrrwlw0Rft_eOF3GEi3flhs8XmsDzarDBKhy6EeAhs7QYR9_zsyVx-FTZlGZRJxKRgTeOXbHKqcC8Nb2CW6tFelgqHQEKgWNdpbq55lasjTlS"/>
+</div>
+<p class="font-label-md text-label-md text-on-surface truncate">Cafe Mocha</p>
+<p class="font-caption text-caption text-secondary truncate">Paneer Lababdar</p>
+</div>
+<!-- Activity Card 2 -->
+<div class="min-w-[200px] bg-surface-container-lowest rounded-lg p-md shadow-sm border border-outline-variant/10 active:scale-95 transition-all">
+<div class="w-full h-24 rounded-lg overflow-hidden mb-sm bg-surface-variant">
+<img alt="Butter Chicken" class="w-full h-full object-cover" data-alt="An exquisite serving of Butter Chicken in a copper dish, glistening with a rich orange-red sauce and topped with a swirl of white cream. The background is softly blurred, showing a contemporary restaurant interior with warm ambient lighting. The visual style is editorial and premium, with a focus on tactile warmth and culinary heritage." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrkHVo6n0n6IHH_TsY53cP68mokeMz7vf_qRql0dfnoAVK1rLcCP3j8jSDoleQtdlFAYuEH5n4NSOUlTjhZy26Wv7yj7EaNataBEsgDcc6HV-MQ2vth0fqsHUHrsn_sNOmVXYfnhXANaH_lBhLyYxGEfxevs0JbfuJ14Wb6iIigtMJrhltqFqGkcK8XNVmUyFeaddVjUWZdc06Gm_ZcDX-JMs3oCyqi-iU4Es1kyuiZlMQ4kDce1F9vU2NCk4qJP_gRbdDnnFtpf_c"/>
+</div>
+<p class="font-label-md text-label-md text-on-surface truncate">The Heritage Grill</p>
+<p class="font-caption text-caption text-secondary truncate">Butter Chicken</p>
+</div>
+<!-- Activity Card 3 -->
+<div class="min-w-[200px] bg-surface-container-lowest rounded-lg p-md shadow-sm border border-outline-variant/10 active:scale-95 transition-all">
+<div class="w-full h-24 rounded-lg overflow-hidden mb-sm bg-surface-variant">
+<img alt="Dal Makhani" class="w-full h-full object-cover" data-alt="A close-up shot of slow-cooked Dal Makhani in a rustic clay pot, garnished with a pat of butter and fresh herbs. The steam rising from the dish adds a sense of freshness and warmth. The lighting is low and intimate, creating a cozy atmosphere that reflects modern Indian digital hospitality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0b0oA1Z0yT7x-TayeNFaGNIuRxeiuvoCG3HXdyZAI65FVLU8fetTDVOm-HotF8CpAggJcpxL0D7Jlgd2XOv6sij5W1tWwmnWprcQotUxqtyPUMxhZ2WS_8rJzKbkqn0FYEsQUO19Y6UjalcVMAtZwvp9f7iDNB7Xhrk9RvIKwuB19CC5PssyP-WO5KANxa8002mcBiDMg6ORdHI2GWCKVBJ0QnWHWtGdzgDDvKnMVW9ofjMeMrsXDJ2A5a_EhlhrMiV7eF8M8yyh4"/>
+</div>
+<p class="font-label-md text-label-md text-on-surface truncate">Spice Root</p>
+<p class="font-caption text-caption text-secondary truncate">Dal Makhani</p>
+</div>
+</div>
+</section>
+<!-- Recommended Section -->
+<section class="space-y-md">
+<h3 class="font-headline-md text-headline-md text-on-surface">Personal Concierge</h3>
+<div class="grid grid-cols-2 gap-md">
+<div class="col-span-2 bg-secondary-container/30 border border-secondary/10 rounded-xl p-lg flex items-center justify-between">
+<div class="space-y-xs">
+<p class="font-label-md text-label-md text-secondary uppercase tracking-wider">Today's Pick</p>
+<h4 class="font-title-lg text-title-lg text-on-secondary-container">Masala Chai Cheesecake</h4>
+<p class="font-body-sm text-body-sm text-on-secondary-container/80">A fusion of tradition and contemporary flair.</p>
+</div>
+<div class="w-20 h-20 bg-secondary rounded-full flex items-center justify-center text-on-secondary">
+<span class="material-symbols-outlined text-[40px]" data-icon="restaurant">restaurant</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-md border-t border-outline-variant/30 dark:border-outline/20 shadow-[0_-4px_16px_rgba(31,27,23,0.04)] flex justify-around items-center px-md py-sm pb-safe">
+<!-- Home (Active) -->
+<a class="flex flex-col items-center justify-center text-on-secondary-container dark:text-secondary-fixed bg-secondary-container dark:bg-on-secondary-fixed-variant rounded-full px-xl py-xs active:scale-90 transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="home">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<!-- Saved -->
+<a class="flex flex-col items-center justify-center text-outline dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors active:scale-90 duration-300 ease-out px-xl py-xs" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="bookmark">bookmark</span>
+<span class="font-label-md text-label-md">Saved</span>
+</a>
+<!-- History -->
+<a class="flex flex-col items-center justify-center text-outline dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors active:scale-90 duration-300 ease-out px-xl py-xs" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="history">history</span>
+<span class="font-label-md text-label-md">History</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-outline dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors active:scale-90 duration-300 ease-out px-xl py-xs" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="person">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</a>
+</nav>
+</body></html>

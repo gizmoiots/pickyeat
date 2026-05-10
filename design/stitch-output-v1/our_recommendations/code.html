@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Zaika - Your Picks</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#34704d",
+                        "on-tertiary-container": "#7a0e07",
+                        "on-secondary-fixed": "#002110",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#410000",
+                        "primary-fixed-dim": "#ffb878",
+                        "surface-container-high": "#f0e6e0",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#ffdcc1",
+                        "tertiary-fixed": "#ffdad5",
+                        "on-surface-variant": "#534437",
+                        "tertiary": "#ab3326",
+                        "on-background": "#1f1b17",
+                        "background": "#fff8f4",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#115131",
+                        "on-primary-fixed": "#2e1500",
+                        "tertiary-container": "#ff816f",
+                        "on-primary-container": "#5c3100",
+                        "inverse-surface": "#34302b",
+                        "surface-variant": "#eae1da",
+                        "surface-dim": "#e1d8d2",
+                        "secondary-fixed-dim": "#96d4aa",
+                        "on-error-container": "#93000a",
+                        "secondary-container": "#b1f1c5",
+                        "surface-bright": "#fff8f4",
+                        "on-surface": "#1f1b17",
+                        "secondary-fixed": "#b1f1c5",
+                        "primary": "#8e4f00",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#8a1b12",
+                        "secondary": "#2e6a47",
+                        "surface": "#fff8f4",
+                        "outline-variant": "#d9c2b2",
+                        "surface-container-highest": "#eae1da",
+                        "error": "#ba1a1a",
+                        "primary-container": "#e8923c",
+                        "surface-container": "#f6ece5",
+                        "inverse-on-surface": "#f9efe8",
+                        "on-primary-fixed-variant": "#6c3a00",
+                        "on-primary": "#ffffff",
+                        "outline": "#867465",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#fcf2eb",
+                        "tertiary-fixed-dim": "#ffb4a8",
+                        "surface-tint": "#8e4f00",
+                        "inverse-primary": "#ffb878"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "12px",
+                        "xxl": "24px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xxl": "48px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "md": "16px",
+                        "xl": "32px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "title-lg": ["Fraunces"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "headline-md": ["Fraunces"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "display-xl": ["Fraunces"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "body-sm": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "title-lg": ["28px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "label-md": ["13px", {"lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "headline-md": ["22px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "body-lg": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "display-xl": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>.texture-overlay {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuD0t7zEftZeLtk9is3tRxS6LRZ4YowNMCDiJOAQpYMRvmlM93cWh_saPhX4_nOONUXx88wIzQGbqt_6hyP9tfhh3FoW4bd9XB242c_tMBoGf8N7auga5Y3DOLtuQYcktrCBYQDx2comJOP0QTRxuwGobYnvH90eY1WlycH7gR49OhhFhqQ_BJ-ajWnjdljy5rjvab3KBVMzpFDx3OfKvoIPTNQVpMUiB4cYx9OBxEb3-0lLBKunA_385BUVqtaTw3ve1RlRJM8LzmlU);
+    opacity: 0.05;
+    pointer-events: none
+    }
+.grain-bg {
+    position: relative
+    }
+.grain-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0) 0%, rgba(248, 244, 237, 0.1) 100%);
+    z-index: -1
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-lg grain-bg min-h-screen">
+<div class="texture-overlay fixed inset-0 z-[100]"></div>
+<!-- Top App Bar -->
+<header class="bg-surface/90 backdrop-blur-md sticky top-0 z-50 flex justify-between items-center w-full px-md py-sm shadow-[0_4px_16px_rgba(31,27,23,0.06)]">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary cursor-pointer active:scale-95 transition-transform" data-icon="restaurant_menu">restaurant_menu</span>
+<h1 class="font-title-lg text-title-lg font-bold text-primary tracking-tight">Zaika</h1>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border border-outline-variant/30">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="A professional and friendly portrait of a person with a warm smile, set against a soft, neutral studio background. The lighting is high-key and elegant, reflecting the premium hospitality aesthetic of the Zaika brand. The image is circular-cropped for a modern profile interface, using a clean and bright light-mode color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsfMx2M8NNRsrU5BAo8TH5HM8tGR6pvnQID1Gw4t5eLJ46W_ROYF0oRiG6WrANdVWODBconbpoqHO1CM4DPOlkxMJkYXF98ve_D-rYwWYoPcmbzN7c8LFrcTty0B1R4AzJbj4gYCuse60Y3Td-gri_SW3GjQWiIwB8_sTHNGuG8-ZJg-uWsAMD182HJgus3VexB8Rrgbz3PYybv0_GsrAdvbHAZB0kJawFA2pqPtRRvgYYlz2gBHgQguR-aNMw6whuBit5AA92FGMi"/>
+</div>
+</header>
+<main class="px-md pb-[180px] max-w-2xl mx-auto">
+<!-- Context Header & Veg Toggle -->
+<section class="mt-lg mb-xl flex flex-col gap-md">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-label-md text-label-md text-secondary uppercase tracking-widest mb-xs">Personalized Selections</p>
+<h2 class="font-headline-md text-[24px] text-on-background italic">Here's what I'd get...</h2>
+</div>
+<div class="flex items-center gap-sm bg-surface-container-low p-xs rounded-full border border-outline-variant/20">
+<span class="font-label-md text-label-md pl-sm text-outline">Veg Only</span>
+<button class="w-10 h-6 bg-secondary rounded-full relative transition-colors duration-300">
+<div class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full"></div>
+</button>
+</div>
+</div>
+</section>
+<!-- Dish List -->
+<div class="flex flex-col gap-xl">
+<!-- Card 1: Paneer Lababdar -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_16px_rgba(31,27,23,0.06)] hover:shadow-[0_8px_24px_rgba(31,27,23,0.1)] transition-all duration-300">
+<div class="h-[200px] w-full relative">
+<img alt="Paneer Lababdar" class="w-full h-full object-cover" data-alt="A lush, close-up shot of Paneer Lababdar in a traditional copper handi, with thick orange gravy and fresh cream swirls. The setting is a rustic Indian table with natural sunlight illuminating the textures of the paneer cubes and cilantro garnishing. The atmosphere is warm and inviting, emphasizing artisanal quality and vibrant spices." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeiWJcAjTPHrvlJ3gu9ztKsksSXR-sZK1RXvkwUWpEeh30n84_KLb-TwM4aF4jLgtF-UTp3rSAxVLkyYMjaBW-NkUSf6aD_Rz3I8Es9glTOZ4QMUe1K4DsflMk5s1juT1DXPa3kb71JcCqCk0haHyGpD0Mz-wiX2tppVx-V39pEr7TpBI37FLatVE5OrtYkF1iVthrew4_FWu4FGdxyGgU9R2nAMPkw3saw4696axdE7-mwJ9qPkO-QZVR6SR9vntq6nIkBxLYtNW6"/>
+<div class="absolute top-md left-md">
+<div class="bg-white/90 backdrop-blur-sm rounded-full p-xs flex items-center gap-xs pr-sm">
+<div class="w-2 h-2 rounded-full bg-[#7FB069]"></div>
+<span class="font-label-md text-[10px] text-on-surface">VEG</span>
+</div>
+</div>
+</div>
+<div class="p-md flex flex-col gap-md">
+<!-- Row 1: Title & Price -->
+<div class="flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-on-background">Paneer Lababdar</h3>
+<span class="font-title-lg text-headline-md text-primary">₹380</span>
+</div>
+<!-- Row 2: Badges -->
+<div class="flex flex-wrap gap-sm">
+<span class="inline-flex items-center gap-xs px-sm py-xs bg-tertiary-container/20 text-on-tertiary-container rounded-full font-label-md text-label-md">
+<span class="text-[14px]">🔥</span> Crowd Favorite
+                        </span>
+<span class="inline-flex items-center gap-xs px-sm py-xs bg-primary-container/20 text-on-primary-container rounded-full font-label-md text-label-md">
+<span class="text-[14px]">🎯</span> Matches your taste
+                        </span>
+</div>
+<!-- Row 3: Reason Line -->
+<p class="text-on-surface-variant font-body-sm leading-relaxed border-l-2 border-primary-container/40 pl-md italic">
+                        "Three reviews obsessed over this. Rich, slightly spicy, exactly your full-meal vibe."
+                    </p>
+<!-- Row 4: Actions -->
+<div class="flex items-center justify-between pt-sm">
+<div class="flex gap-md">
+<button class="text-outline hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[24px]" data-icon="favorite">favorite</span>
+</button>
+<button class="text-outline hover:text-secondary transition-colors">
+<span class="material-symbols-outlined text-[24px]" data-icon="share">share</span>
+</button>
+</div>
+<button class="bg-primary-container text-on-primary-container px-lg py-sm rounded-full font-label-md text-label-md flex items-center gap-sm active:scale-95 transition-all shadow-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="check">check</span>
+                            I'll have this
+                        </button>
+</div>
+</div>
+</article>
+<!-- Card 2: Dal Tadka (Simulated for list feel) -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_16px_rgba(31,27,23,0.06)] opacity-70 grayscale-[0.3]">
+<div class="h-[200px] w-full relative">
+<img alt="Dal Tadka" class="w-full h-full object-cover" data-alt="A steaming bowl of yellow Dal Tadka with a vibrant red chili and cumin tempering on top. The background is a soft ivory linen cloth with scattered coriander seeds. The lighting is soft and golden, creating a sense of home-cooked comfort and purity. High-end food photography with deep focus on the sizzling tadka elements." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqaOr_3D9kQ5v9aI2PCLpLBmmAilEDPGc-lAIQZTVk2iNS5c6KqxafvIItvYxy-2s3fFn6t_V-QvKxAibMb7rOApHqhjMOZ9-5RGlbij9ZKFqeFX4bbQdVOkzHgW87TMslDUiGtO9lYkB4Mof66_MF4uqKvFSSwwlbVe2yx0tk5Ehh-FpafOpr3NUtgXWGrGZuEGVMjD4XPiaM4_4ho_yvlH4Q8kwN_y_Xv2_dq25tQTFgkSEaX-QOpDch43WRh9I9tPTWwgwzpbMM"/>
+</div>
+<div class="p-md flex flex-col gap-md">
+<div class="flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-on-background">Dal Tadka</h3>
+<span class="font-title-lg text-headline-md text-primary">₹240</span>
+</div>
+<p class="text-on-surface-variant font-body-sm italic">"Great for a lighter option, but the Paneer matches your previous preferences better."</p>
+<div class="flex items-center justify-end">
+<button class="border border-outline-variant text-outline px-lg py-sm rounded-full font-label-md text-label-md hover:bg-surface-container transition-all">
+                            Add to meal
+                        </button>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- Sticky Bottom Selection Area -->
+<footer class="fixed bottom-0 w-full z-50 bg-surface/95 backdrop-blur-lg border-t border-outline-variant/30 px-md py-lg flex flex-col gap-md shadow-[0_-8px_32px_rgba(31,27,23,0.08)]">
+<div class="flex justify-between items-center px-xs">
+<span class="font-label-md text-on-surface">Selected <span class="text-primary font-bold">1 dish</span></span>
+<span class="font-title-lg text-headline-md text-on-background">≈ ₹380</span>
+</div>
+<div class="grid grid-cols-2 gap-md">
+<button class="border border-secondary text-secondary px-md py-sm rounded-full font-label-md text-label-md flex items-center justify-center gap-xs hover:bg-secondary/5 transition-all">
+<span class="material-symbols-outlined text-[18px]" data-icon="refresh">refresh</span>
+                Try different mood
+            </button>
+<button class="border border-secondary text-secondary px-md py-sm rounded-full font-label-md text-label-md flex items-center justify-center gap-xs hover:bg-secondary/5 transition-all">
+<span class="material-symbols-outlined text-[18px]" data-icon="menu_book">menu_book</span>
+                Browse menu
+            </button>
+</div>
+</footer>
+<!-- Global Bottom Nav (Suppressed for transactional journey but kept structure for context) -->
+<!-- The prompt implies we are in a focused 'Picks' journey, so standard nav is hidden by the sticky footer -->
+</body></html>

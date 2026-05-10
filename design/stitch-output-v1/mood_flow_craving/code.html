@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#f6ece4",
+                    "secondary-fixed-dim": "#ffb5a1",
+                    "tertiary": "#006d40",
+                    "secondary-fixed": "#ffdbd1",
+                    "surface-dim": "#e2d8d0",
+                    "secondary-container": "#ff6940",
+                    "inverse-primary": "#ffb59c",
+                    "on-primary-fixed": "#390c00",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-container": "#00351d",
+                    "on-primary-fixed-variant": "#832700",
+                    "on-secondary-fixed-variant": "#881f00",
+                    "on-surface": "#1f1b16",
+                    "error-container": "#ffdad6",
+                    "on-secondary-container": "#611400",
+                    "error": "#ba1a1a",
+                    "surface-container-highest": "#eae1d8",
+                    "on-tertiary-fixed": "#002110",
+                    "surface-container-high": "#f0e7de",
+                    "surface-variant": "#eae1d8",
+                    "outline": "#8c7169",
+                    "primary-container": "#f26b3a",
+                    "tertiary-fixed": "#7afbb1",
+                    "secondary": "#af3009",
+                    "tertiary-container": "#14aa68",
+                    "on-primary-container": "#571700",
+                    "primary-fixed": "#ffdbd0",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#34302a",
+                    "surface-bright": "#fff8f3",
+                    "tertiary-fixed-dim": "#5cde97",
+                    "background": "#fff8f3",
+                    "on-tertiary-fixed-variant": "#00522f",
+                    "surface-tint": "#a93705",
+                    "primary": "#a93705",
+                    "inverse-on-surface": "#f9efe6",
+                    "surface": "#fff8f3",
+                    "primary-fixed-dim": "#ffb59c",
+                    "on-surface-variant": "#58413a",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed": "#3b0800",
+                    "on-error": "#ffffff",
+                    "surface-container-low": "#fcf2e9",
+                    "on-background": "#1f1b16",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "outline-variant": "#e0c0b6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "gutter": "12px",
+                    "unit": "4px",
+                    "md": "16px",
+                    "lg": "24px",
+                    "xl": "32px",
+                    "sm": "8px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "body-rg": ["Plus Jakarta Sans"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "ui-label-sm": ["Plus Jakarta Sans"],
+                    "body-sm": ["Plus Jakarta Sans"],
+                    "ui-label": ["Plus Jakarta Sans"],
+                    "display-md": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "body-rg": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                    "display-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "ui-label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "body-sm": ["14px", {"lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "400"}],
+                    "ui-label": ["14px", {"lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "display-md": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .sprig-dot::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background-color: #2BB673;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        body {
+            background-color: #fff8f3; /* Coconut equivalent */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-rg text-on-surface antialiased">
+<!-- Top Navigation Bar -->
+<header class="bg-surface dark:bg-surface border-b-[0.5px] border-outline/20 docked full-width top-0 z-50 flex justify-between items-center w-full px-margin-mobile py-sm">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full overflow-hidden border-[0.5px] border-on-surface/10">
+<img alt="User Profile" data-alt="A professional headshot of a smiling man with a warm, approachable expression. The lighting is soft and natural, typical of a modern portrait. He is positioned against a clean, neutral studio background that aligns with a minimalist and sophisticated UI aesthetic, emphasizing clarity and human connection." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXJDt-PtW8WU3XHMabW5gcK32VcfOdXoSuu-KFyh92IUjv-A3XcUkPmHno6MG3Ga5ox9undnlw3iuvtYZhNmz_C2tQvu32XIFzCWwnV5cu4txTil5HTSLBmKxDKDe01NkjS4VuD3R0yHG0P2DTKHxQ6p-5JYZeUQc-e8R6lFMMXVvMblMgMkxX0XAVrroF9OQ4DKhdeJJxjNmrc1-ItywvAZX830tESYjRVtd8r51Vq6nVDkHbJkJjAcKV34kBC-X87TD_VLKdSVbl"/>
+</div>
+</div>
+<h1 class="font-display-md text-display-md text-primary dark:text-primary-fixed-dim">pickyeat<span class="text-tertiary">.</span></h1>
+<button class="material-symbols-outlined text-on-surface-variant hover:opacity-80 transition-all duration-200 active:scale-95">notifications</button>
+</header>
+<main class="min-h-screen pt-xl pb-32 px-margin-mobile max-w-md mx-auto">
+<!-- Eyebrow & Hero Title -->
+<section class="mb-xl text-center">
+<p class="font-ui-label text-ui-label text-on-surface-variant uppercase tracking-widest mb-xs">what are you craving?</p>
+<h2 class="font-display-lg text-display-lg text-on-surface leading-tight">Find your flow<span class="text-tertiary">.</span></h2>
+</section>
+<!-- Bento Grid 2x2 -->
+<div class="grid grid-cols-2 gap-md">
+<!-- Drinks Tile -->
+<div class="aspect-square bg-surface-container-lowest border-[0.5px] border-on-surface/15 rounded-xl p-md flex flex-col justify-between transition-all duration-200 active:scale-95 group">
+<div class="flex justify-end">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">local_bar</span>
+</div>
+<div>
+<h3 class="font-display-md text-display-md text-on-surface">Drinks</h3>
+<p class="font-body-sm text-on-surface-variant">Sip &amp; Chill</p>
+</div>
+</div>
+<!-- Quick Tile (Selected State) -->
+<div class="aspect-square bg-surface-container-lowest border-[1px] border-primary-container rounded-xl p-md flex flex-col justify-between transition-all duration-200 active:scale-95 shadow-sm">
+<div class="flex justify-between items-start">
+<div class="w-2 h-2 bg-tertiary rounded-full"></div>
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<div>
+<h3 class="font-display-md text-display-md text-on-surface">Quick</h3>
+<p class="font-body-sm text-on-surface-variant">Fast bites</p>
+</div>
+</div>
+<!-- Food Tile -->
+<div class="aspect-square bg-surface-container-lowest border-[0.5px] border-on-surface/15 rounded-xl p-md flex flex-col justify-between transition-all duration-200 active:scale-95 group">
+<div class="flex justify-end">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">restaurant</span>
+</div>
+<div>
+<h3 class="font-display-md text-display-md text-on-surface">Food</h3>
+<p class="font-body-sm text-on-surface-variant">Regular portions</p>
+</div>
+</div>
+<!-- Full Meal Tile -->
+<div class="aspect-square bg-surface-container-lowest border-[0.5px] border-on-surface/15 rounded-xl p-md flex flex-col justify-between transition-all duration-200 active:scale-95 group">
+<div class="flex justify-end">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">flatware</span>
+</div>
+<div>
+<h3 class="font-display-md text-display-md text-on-surface">Full meal</h3>
+<p class="font-body-sm text-on-surface-variant">Hungry for more</p>
+</div>
+</div>
+</div>
+<!-- Secondary Action Section -->
+<section class="mt-xl space-y-md">
+<h4 class="font-ui-label text-ui-label text-on-surface-variant sprig-dot">Popular right now</h4>
+<div class="bg-surface-container-low rounded-xl p-md border-[0.5px] border-on-surface/10 flex items-center gap-md">
+<div class="w-16 h-16 rounded-lg overflow-hidden shrink-0">
+<img alt="Fresh Salad" data-alt="A vibrant, gourmet garden salad presented in a minimalist ceramic bowl. The dish features crisp greens, bright heirloom tomatoes, and delicate microgreens, all illuminated by soft, overhead kitchen lighting. The overall color palette is fresh and natural, with greens and reds popping against the warm, off-white textures of a clean, modern dining setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMr9BqNDMWUj-5Laky8tC0kmw5B7H8G7e3gRpDTYC3YXDfWrWuAcZEJFj_lrkSqvmxAXlE4ltbtxVCx2ODVCW75jrtyY2wWVklTpPP8ARkoxbyt3b_TvlFuyTUwd4zWCrWxUEOilhiGCZofPlGz3tm4-qtQZkESc8IXcGvVvW52AZ8O5HXKifibo-6ipGV9zQUrUKfn7NtSVD9vNhAwHJHBV3saGDKeue2vvPr_Odw8nNpN0Db8-EP_6lw6cOlOZdQnAUgl3SvHYpo"/>
+</div>
+<div class="flex-1">
+<p class="font-ui-label text-on-surface">Spiced Avocado Bowl</p>
+<p class="font-body-sm text-on-surface-variant text-xs">Healthy choice • 15 min</p>
+</div>
+<button class="w-10 h-10 rounded-full border-[0.5px] border-on-surface/20 flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-primary">chevron_right</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface dark:bg-surface py-md px-margin-mobile pb-safe border-t-[0.5px] border-outline/20">
+<!-- Home Active -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim relative after:content-[''] after:w-1.5 after:h-1.5 after:bg-tertiary after:rounded-full after:mt-1 transition-transform duration-200 active:scale-90" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-ui-label-sm text-ui-label-sm">Home</span>
+</a>
+<!-- Profile Inactive -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-dim transition-transform duration-200 active:scale-90 rounded-lg p-xs" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-ui-label-sm text-ui-label-sm">Profile</span>
+</a>
+</nav>
+</body></html>

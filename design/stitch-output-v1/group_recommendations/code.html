@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Zaika - Group Picks</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#34704d",
+                        "on-tertiary-container": "#7a0e07",
+                        "on-secondary-fixed": "#002110",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#410000",
+                        "primary-fixed-dim": "#ffb878",
+                        "surface-container-high": "#f0e6e0",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#ffdcc1",
+                        "tertiary-fixed": "#ffdad5",
+                        "on-surface-variant": "#534437",
+                        "tertiary": "#ab3326",
+                        "on-background": "#1f1b17",
+                        "background": "#fff8f4",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#115131",
+                        "on-primary-fixed": "#2e1500",
+                        "tertiary-container": "#ff816f",
+                        "on-primary-container": "#5c3100",
+                        "inverse-surface": "#34302b",
+                        "surface-variant": "#eae1da",
+                        "surface-dim": "#e1d8d2",
+                        "secondary-fixed-dim": "#96d4aa",
+                        "on-error-container": "#93000a",
+                        "secondary-container": "#b1f1c5",
+                        "surface-bright": "#fff8f4",
+                        "on-surface": "#1f1b17",
+                        "secondary-fixed": "#b1f1c5",
+                        "primary": "#8e4f00",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#8a1b12",
+                        "secondary": "#2e6a47",
+                        "surface": "#fff8f4",
+                        "outline-variant": "#d9c2b2",
+                        "surface-container-highest": "#eae1da",
+                        "error": "#ba1a1a",
+                        "primary-container": "#e8923c",
+                        "surface-container": "#f6ece5",
+                        "inverse-on-surface": "#f9efe8",
+                        "on-primary-fixed-variant": "#6c3a00",
+                        "on-primary": "#ffffff",
+                        "outline": "#867465",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#fcf2eb",
+                        "tertiary-fixed-dim": "#ffb4a8",
+                        "surface-tint": "#8e4f00",
+                        "inverse-primary": "#ffb878"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xxl": "48px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "md": "16px",
+                        "xl": "32px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "title-lg": ["Fraunces"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "headline-md": ["Fraunces"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "display-xl": ["Fraunces"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "body-sm": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "title-lg": ["28px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "label-md": ["13px", {"lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "headline-md": ["22px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "body-lg": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "display-xl": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>body {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBOxCgwyM3HkSzWwu0D79Tv-ccGA972PX5x4VlIN26-xg3PvHYUi5ypS4hEmTVXi3bSplwq9LZ5CNd-L5sFfqwqx8igBRXixc6Atmc6QTCAuVNT-5CP1qKzre1EUIrq7PDi_laC5K-DWtJL9plKxhdJ9xaIYraOV1MYaWPX3qgVoXcmS8BaLhVKJuEGGcwkAYthdES6Mb0dW6GgZ3Dj68295i0JZz9JHUzUKo9JecdAOt6isKiKcvxADGkIQGLZJzko1Zk4CeTI3tZ2);
+    background-color: #fff8f4
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-lg text-on-surface selection:bg-primary/20">
+<!-- Top AppBar (JSON Component) -->
+<header class="bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-md fixed top-0 z-50 w-full shadow-[0_4px_16px_rgba(31,27,23,0.06)] dark:shadow-none flex justify-between items-center px-md py-sm">
+<div class="flex items-center gap-md">
+<button class="hover:opacity-80 transition-opacity active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined text-primary" data-icon="restaurant_menu">restaurant_menu</span>
+</button>
+<span class="font-title-lg text-title-lg font-bold text-primary tracking-tight">Zaika</span>
+</div>
+<div class="flex items-center gap-md">
+<span class="hidden md:flex gap-md font-label-md text-label-md text-on-surface-variant">
+<a class="hover:opacity-80 transition-opacity" href="#">Home</a>
+<a class="hover:opacity-80 transition-opacity" href="#">Saved</a>
+<a class="hover:opacity-80 transition-opacity" href="#">History</a>
+</span>
+<img class="w-8 h-8 rounded-full border border-outline-variant/30 active:scale-95 transition-transform duration-200" data-alt="A professional studio headshot of a person with a warm, friendly expression, set against a soft, cream-colored background. The lighting is bright and even, reflecting a modern light-mode aesthetic. The individual has clear features and is styled in high-quality, professional attire, embodying the concept of high-end digital hospitality and personal touch." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBK2iPhG524x3ge4cobYx7vVfcyw1AG3VpzFEywGToMB_pGg_AVTJ-I15khazNdIYDdWrx5Qr3tDMQDZD8QtyPWuLZV645d7xLs2zS7PHgI-W6U6uZC_F2XbgUkb_qkn-J_E0gHOhiosdsXHhIgdIolh7eKOIQ0YNeEu1SZ7DNwzRAXYNjZ6iu0eezeclpA4l9MZZUZM1SszJgz7GnKDqPYJRlgdTKfWVWbgLagqEJkbRRm9jgtLI6sFRxRdHbiknsg5qL1SQUrhOpO"/>
+</div>
+</header>
+<main class="pt-xxl pb-xxl px-md max-w-2xl mx-auto min-h-screen">
+<!-- Group Header Section -->
+<section class="mt-lg mb-xl">
+<div class="flex items-center gap-sm mb-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]" data-icon="groups">groups</span>
+<p class="font-label-md text-label-md text-secondary">Group at Cafe Mocha · 4 people</p>
+</div>
+<h1 class="font-display-xl text-display-xl text-on-surface leading-tight">Here's what I'd get for the group...</h1>
+</section>
+<!-- Vertical Dish Card List -->
+<div class="flex flex-col gap-lg">
+<!-- Dish Card 1 -->
+<article class="bg-surface-container-low rounded-xl overflow-hidden shadow-[0_4px_16px_rgba(31,27,23,0.06)] hover:shadow-[0_8px_24px_rgba(31,27,23,0.1)] transition-all duration-300 group">
+<div class="flex flex-col md:flex-row h-full">
+<div class="md:w-5/12 h-48 md:h-auto overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A gourmet presentation of Paneer Tikka on a warm, organic-textured ceramic plate. The lighting is soft and natural, emphasizing the rich, saffron and cardamom earth tones of the dish. Wisps of steam suggest freshness, and the background is a blurred, minimalist cafe setting with light wood and cream accents, conveying effortless discovery and sensory comfort." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzeP1CHle2HAt1iLyw2qllCJAQ-udDawRMcg9yvOnQpk6mB7g6V6hmbNef-e3yFoVjPSbM4IOVXOyTlyUEWD3Z87tzU5kknz1Si1sUJQoEiFIXNVgz42Pdh12Dgk9WStnV7FfN-FDEj6f0nj9BTy6JZtbEinEpPqU0U7QGXC5GbA_YgtUNs_5W5Uq-k4XfTCGGTzFyXqyCwuV0hshNSc8krAMO3enD2Q3P6pSgl7tq-cdVzg9g1qq7rowYXF9ERnoHEOd3_7n8jRvG"/>
+</div>
+<div class="md:w-7/12 p-md flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-xs">
+<div class="flex items-center gap-xs">
+<h3 class="font-headline-md text-headline-md text-on-surface">Paneer Tikka Platter</h3>
+<div class="w-2 h-2 rounded-full bg-[#7FB069]"></div>
+</div>
+<span class="font-label-md text-label-md text-primary">₹540</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Hand-pressed cottage cheese marinated in a spiced yoghurt hung in traditional muslin. Served with mint chutney.</p>
+<div class="flex flex-wrap gap-xs mt-md">
+<span class="bg-surface-container-high px-sm py-xs rounded-full font-label-md text-label-md text-on-surface-variant flex items-center gap-xs">🌶️ Medium</span>
+<span class="bg-surface-container-high px-sm py-xs rounded-full font-label-md text-label-md text-on-surface-variant flex items-center gap-xs">Sharing</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Member Footer Strip -->
+<div class="bg-secondary-container/30 px-md py-sm flex items-center justify-between border-t border-outline-variant/20">
+<div class="flex items-center gap-sm">
+<div class="flex -space-x-2">
+<img class="w-6 h-6 rounded-full ring-2 ring-surface border border-outline-variant/20" data-alt="A detailed portrait of a man smiling warmly, set in a natural, softly lit environment. The lighting is golden-hour warm, creating a welcoming and sophisticated feel. The background is softly out of focus, highlighting the person's professional yet approachable demeanor, fitting the premium hospitality brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIFHzf1f8QPNR3mj_gabFAXLMXGxU_X5SKe3V906lhuLl-xRHRv4A_DVetfKcgtDUu5QIqc_-m2MXR21ivGBli83d1dO8txKDeSdcJkCBnOaZ282l-WXve-dfeh0noS56KJHCmaqG9PAjU_KF03w991dtoyPosaWBXHZ__YJAXIXRjOn_KDJ8BpbAUrGt39V9L410wtGk0FbrXmDBZAd7oL4n0L5c9KFh1nvmExe8s8MgvDErwiCoS7aDh2TuQ83JDfxataHis0_kJ"/>
+<img class="w-6 h-6 rounded-full ring-2 ring-surface border border-outline-variant/20" data-alt="A portrait of a woman with a confident and gentle expression, illuminated by soft ambient light that accentuates her features. The aesthetic is clean and modern, with a palette of warm ivory and cream. Her style is elegant and understated, reflecting the brand's focus on quality and heritage." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBq5yr2AaUzASpsGvUVOAQST8qqzEKjNRgR56SteHHlv4Sha2601nQ5Q_TS-XA6RZapyz-QdookO7S5u6P-auPaaeAsi60zk3bKyCDhTNlLmRQsNvbJETXXF3536ZQz1uL4zw3v6lY-ShiImFRZG636F3v-gGK8ovcU3f_eIu7osUUt-BsuM0ayPLtFnmGt-WuS9_Il82xGawKdPk6PYcqYfEwassCVaSjB067UShq-4W11WUPMAwhUh9kgwBxzv9ofx_mJrh6Ntmwo"/>
+<img class="w-6 h-6 rounded-full ring-2 ring-surface border border-outline-variant/20" data-alt="A high-key portrait of a young man with a friendly smile, shot in a bright, modern interior. The lighting is soft and airy, creating a fresh and high-end aesthetic. The overall mood is one of premium, collaborative dining, consistent with the Zaika brand personality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwMOSRVisJkfqKIzBlH_5ZfdrdEKu9KzV8SJkbXc__i1CLUc7WNSEkYrcISoyCCfDBRmhflbda3ugM-7llFO2VY6SCb1-hSfvB6NuB3l4zZe6o40qYv-yXyPKLyOXg5aQmyJH9d1tj15bKJARn0JfvjuzmA0iIX9nxKZ72W-bQaX48mpFfOMTQsuB_suaAOfny7JZW38GPWf6rXqlFmYnQi39UmXuR_hBoXNXq_0HIRXDsi9z6Xtmc6DHbWwh108KiYsPdEJYRBEjT"/>
+</div>
+<span class="font-label-md text-caption text-on-secondary-fixed-variant">Satisfies Anand, Priya, Karan</span>
+</div>
+<span class="material-symbols-outlined text-secondary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</article>
+<!-- Dish Card 2 -->
+<article class="bg-surface-container-low rounded-xl overflow-hidden shadow-[0_4px_16px_rgba(31,27,23,0.06)] hover:shadow-[0_8px_24px_rgba(31,27,23,0.1)] transition-all duration-300 group">
+<div class="flex flex-col md:flex-row h-full">
+<div class="md:w-5/12 h-48 md:h-auto overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A close-up of a slow-cooked Dal Makhani topped with a swirl of fresh cream and a sprig of coriander. The dish is held in a rustic, hand-beaten copper bowl, catching the warm overhead lighting. The color palette is rich in deep burgundies and creamy whites, suggesting a tactile, artisanal quality and the sensory comfort of Indian culinary traditions." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDaFwOYbWKdve0Xad7TRkG8xYS-8U8jTvsX_XQRmKBdWoS-ULh1HqBpz3kCMiy__ou8O9VyX2dKvs8wOnGGhUALNkJ7Ho9qIaIq8onmP1JbXrLcifvDzIPGwlW9ajr2_dT1uO0ibra6sGlzHCIZ7EqdYS-SYn3ArTOABiUndgv8tRQZPMFuSm_-6EnnPG5ZgzEzQpJ3ma4Yiu48dFrrLwkI9Y8a_Qn1E9dqFf2ZOuFJggSInDvSkMH12xQmgK0TFgOSKXadukYKe8M"/>
+</div>
+<div class="md:w-7/12 p-md flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-xs">
+<div class="flex items-center gap-xs">
+<h3 class="font-headline-md text-headline-md text-on-surface">Dal Makhani Signature</h3>
+<div class="w-2 h-2 rounded-full bg-[#7FB069]"></div>
+</div>
+<span class="font-label-md text-label-md text-primary">₹420</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Black lentils simmered for 24 hours with vine-ripened tomatoes and tempered with artisanal butter.</p>
+<div class="flex flex-wrap gap-xs mt-md">
+<span class="bg-surface-container-high px-sm py-xs rounded-full font-label-md text-label-md text-on-surface-variant flex items-center gap-xs">🥣 Comfort</span>
+<span class="bg-surface-container-high px-sm py-xs rounded-full font-label-md text-label-md text-on-surface-variant flex items-center gap-xs">Signature</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Member Footer Strip -->
+<div class="bg-secondary-container/30 px-md py-sm flex items-center justify-between border-t border-outline-variant/20">
+<div class="flex items-center gap-sm">
+<div class="flex -space-x-2">
+<img class="w-6 h-6 rounded-full ring-2 ring-surface border border-outline-variant/20" data-alt="A professional headshot of a woman with a gentle and warm expression, set against a bright, minimalist backdrop. The lighting is high-key and natural, highlighting a clean and modern aesthetic. The color palette is composed of soft creams and warm greys, conveying a sense of expertise and refined digital hospitality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxos_jC2oCz0re4-ZDi0bYo_u8s9zqbC7GgtQ4gDF56dS7qvwvI5T7i3JK_uhkhfdL_gUw353GfCKY-P8SANDWhm6TuevaTDkdqgpPp6Tu4zP8i5fFCRuxLl8dnC1vdD6KisdBpNJ07rvduK3tzOyhrzi0v1fUpRsIdpht-pnoYMld2NBgtOEf6Bc521js8jkNof_vsbg1Axl35JidQELgzsVAP97Exm_-6EvNjRblG6_hvDApZeC14H_QtLkfv5JwCFzBRxLHrlh3"/>
+<img class="w-6 h-6 rounded-full ring-2 ring-surface border border-outline-variant/20" data-alt="A portrait of a woman with a confident and gentle expression, illuminated by soft ambient light that accentuates her features. The aesthetic is clean and modern, with a palette of warm ivory and cream. Her style is elegant and understated, reflecting the brand's focus on quality and heritage." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkdWVyPEqjAjZeNrcPRd_6_iIiBtsTGV64H9kZSCY9fNoQuYIOcI07iQQXQAiC5Y2j5a6OUJIBPyLkCju7pppIUqxq7yrwQelnKs_kdEsheeMCfPi6_01Qq3rxT6gZDPAFsBWDc_NehhDCi89EjGYuYYyiNAvgU2CJxLT6vYnSlQGLaYhMHhDXqkoaCjcaEFKJEbP0gUfujNmXlYie7e7nf9lkHptcrHTMA5HFgH_0d3JValeZ2wXmjv9Gp9nCjm5zJxZ5Ofe251RE"/>
+</div>
+<span class="font-label-md text-caption text-on-secondary-fixed-variant">Satisfies Priya, Karan</span>
+</div>
+<span class="material-symbols-outlined text-secondary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</article>
+<!-- Dish Card 3 -->
+<article class="bg-surface-container-low rounded-xl overflow-hidden shadow-[0_4px_16px_rgba(31,27,23,0.06)] hover:shadow-[0_8px_24px_rgba(31,27,23,0.1)] transition-all duration-300 group">
+<div class="flex flex-col md:flex-row h-full">
+<div class="md:w-5/12 h-48 md:h-auto overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A vibrant and colorful presentation of a Galouti Kebab platter on an artisanal wooden board. The lighting is warm and directional, casting soft shadows that create depth. Garnished with fresh mint and silver leaf, the dish embodies Modern Indian heritage and premium quality. The surrounding environment is a clean, modern dining space with ivory and wood textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZcIcRQqYrd-RfPogeeNKJgnkgKTNoDNpVKV8FcAxXdhprk_X3ZtBDvFYB_3-GyULQILsb8MQV4jDOwZh05AyP4aD740W7OKYiro4q63ln4u6ZPZq700NQWVUMyIq8s9bZvfpuzAXn0x_3EyWQba0_m9nW0lY5kYuiIgwjBJWnHY1SwlTY03-9IBkWtCfuVQUW7alJyOfCUCuAGJJ6vNwX9D29YPn0VXRuKLgmLyrIgFll0ADgqhONbitn7QYvkpXwT4j0HiVyKsE6"/>
+</div>
+<div class="md:w-7/12 p-md flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-xs">
+<div class="flex items-center gap-xs">
+<h3 class="font-headline-md text-headline-md text-on-surface">Melt-in-mouth Galouti</h3>
+<div class="w-2 h-2 rounded-full bg-[#C44536]"></div>
+</div>
+<span class="font-label-md text-label-md text-primary">₹680</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Finely minced lamb kebabs with 160 secret spices, smoked with charcoal. A Lucknowi specialty.</p>
+<div class="flex flex-wrap gap-xs mt-md">
+<span class="bg-surface-container-high px-sm py-xs rounded-full font-label-md text-label-md text-on-surface-variant flex items-center gap-xs">🏆 Best Seller</span>
+<span class="bg-surface-container-high px-sm py-xs rounded-full font-label-md text-label-md text-on-surface-variant flex items-center gap-xs">Smoky</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Member Footer Strip -->
+<div class="bg-secondary-container/30 px-md py-sm flex items-center justify-between border-t border-outline-variant/20">
+<div class="flex items-center gap-sm">
+<div class="flex -space-x-2">
+<img class="w-6 h-6 rounded-full ring-2 ring-surface border border-outline-variant/20" data-alt="A detailed portrait of a man smiling warmly, set in a natural, softly lit environment. The lighting is golden-hour warm, creating a welcoming and sophisticated feel. The background is softly out of focus, highlighting the person's professional yet approachable demeanor, fitting the premium hospitality brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5FcB4QaEKV05ZchHPv9yC13UefSj0AobWVTkFKoBChauRZoRPF9GvUWOnSvVZUWX3oTdWkTuMEuV7UrhhLxZNqRVr2_xJd6Xl6fUl7ntxA013mXcTIcrEoUv2IaJSP3ZiZBgYcEisEJ9_N8yy6bYnCpN7UMbaQBx43YKRQkeRjwfDOElvKf7rgxECg4EaNRrKKGAluwPOdzE4ASvJXl4jN2U_Y9MVyyz8svmRdloCcbLBvqGfnj-Vgd-2s4VIMNVOva4QWbiaKp7f"/>
+</div>
+<span class="font-label-md text-caption text-on-secondary-fixed-variant">Satisfies Anand</span>
+</div>
+<span class="material-symbols-outlined text-secondary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</article>
+</div>
+<!-- Order Summary Section -->
+<section class="mt-xl p-lg bg-surface-container rounded-xl border border-outline-variant/30 flex flex-col gap-md">
+<div class="flex justify-between items-center">
+<span class="font-headline-md text-headline-md text-on-surface">Group Total</span>
+<span class="font-headline-md text-headline-md text-primary">₹1,640</span>
+</div>
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="info">info</span>
+<p class="font-body-sm text-body-sm italic">Inclusive of all local classics and shared happiness.</p>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container py-md rounded-full font-label-md text-label-md shadow-sm active:scale-95 transition-all duration-200 flex justify-center items-center gap-sm">
+                Proceed to Order Selection
+                <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</section>
+</main>
+<!-- Bottom Navigation (JSON Component) -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-md shadow-[0_-4px_16px_rgba(31,27,23,0.04)] border-t border-outline-variant/30 flex justify-around items-center px-md py-sm pb-safe md:hidden">
+<a class="flex flex-col items-center justify-center text-outline hover:text-primary transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="home">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-outline hover:text-primary transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="bookmark">bookmark</span>
+<span class="font-label-md text-label-md">Saved</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-secondary-container bg-secondary-container rounded-full px-xl py-xs active:scale-90 transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="history" style="font-variation-settings: 'FILL' 1;">history</span>
+<span class="font-label-md text-label-md">History</span>
+</a>
+<a class="flex flex-col items-center justify-center text-outline hover:text-primary transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="person">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</a>
+</nav>
+<!-- Subtle Grain Texture Overlay -->
+<div class="fixed inset-0 pointer-events-none opacity-[0.03] mix-blend-multiply z-[60]" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCZnhxo-MfTp8hTZ6PK7er9pqgg9WfhAiJzbqwrqhDW-bigjeSLw0AnypaakE5KT7T2qktFxUScAK_RHvV2yAa8M9AfLsynJqfI5zk567RlruAZ-aVPjgHpSuGp5Qpzn2uF_gjF5qViotIs_WjOwXMMnAEpiuLRSteGQZsCy8wEtmbzwH3fR41oRISXu86oIvzXjZ0E-msrVsihllgRe6qixKtCCVbTPRJwUNoJ2nZ4rGaBIDYAyywORZ7huz442E4zo3HPsFN6GdOS');"></div>
+</body></html>

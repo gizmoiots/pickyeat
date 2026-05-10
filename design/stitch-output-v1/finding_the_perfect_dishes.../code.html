@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Zaika - Finding Flavor</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-container": "#34704d",
+                      "on-tertiary-container": "#7a0e07",
+                      "on-secondary-fixed": "#002110",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary-fixed": "#410000",
+                      "primary-fixed-dim": "#ffb878",
+                      "surface-container-high": "#f0e6e0",
+                      "on-error": "#ffffff",
+                      "primary-fixed": "#ffdcc1",
+                      "tertiary-fixed": "#ffdad5",
+                      "on-surface-variant": "#534437",
+                      "tertiary": "#ab3326",
+                      "on-background": "#1f1b17",
+                      "background": "#fff8f4",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary-fixed-variant": "#115131",
+                      "on-primary-fixed": "#2e1500",
+                      "tertiary-container": "#ff816f",
+                      "on-primary-container": "#5c3100",
+                      "inverse-surface": "#34302b",
+                      "surface-variant": "#eae1da",
+                      "surface-dim": "#e1d8d2",
+                      "secondary-fixed-dim": "#96d4aa",
+                      "on-error-container": "#93000a",
+                      "secondary-container": "#b1f1c5",
+                      "surface-bright": "#fff8f4",
+                      "on-surface": "#1f1b17",
+                      "secondary-fixed": "#b1f1c5",
+                      "primary": "#8e4f00",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-fixed-variant": "#8a1b12",
+                      "secondary": "#2e6a47",
+                      "surface": "#fff8f4",
+                      "outline-variant": "#d9c2b2",
+                      "surface-container-highest": "#eae1da",
+                      "error": "#ba1a1a",
+                      "primary-container": "#e8923c",
+                      "surface-container": "#f6ece5",
+                      "inverse-on-surface": "#f9efe8",
+                      "on-primary-fixed-variant": "#6c3a00",
+                      "on-primary": "#ffffff",
+                      "outline": "#867465",
+                      "on-secondary": "#ffffff",
+                      "surface-container-low": "#fcf2eb",
+                      "tertiary-fixed-dim": "#ffb4a8",
+                      "surface-tint": "#8e4f00",
+                      "inverse-primary": "#ffb878"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xxl": "48px",
+                      "sm": "8px",
+                      "xs": "4px",
+                      "md": "16px",
+                      "xl": "32px",
+                      "lg": "24px"
+              },
+              "fontFamily": {
+                      "title-lg": ["Fraunces"],
+                      "label-md": ["Plus Jakarta Sans"],
+                      "headline-md": ["Fraunces"],
+                      "body-lg": ["Plus Jakarta Sans"],
+                      "display-xl": ["Fraunces"],
+                      "caption": ["Plus Jakarta Sans"],
+                      "body-sm": ["Plus Jakarta Sans"]
+              },
+              "fontSize": {
+                      "title-lg": ["28px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                      "label-md": ["13px", {"lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                      "headline-md": ["22px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                      "body-lg": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "display-xl": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                      "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>@keyframes subtle-float {
+    0%, 100% {
+        transform: translateY(0);
+        } 50% {
+        transform: translateY(-12px);
+        }
+    }
+@keyframes fade-sequence {
+    0%, 20% {
+        opacity: 0;
+        transform: translateY(10px);
+        } 30%, 50% {
+        opacity: 1;
+        transform: translateY(0);
+        } 60%, 100% {
+        opacity: 0;
+        transform: translateY(-10px);
+        }
+    }
+.grain-overlay {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBwvBLf4iLHzAiNJpIzpvjmLUxJFDd225P1ODVF1uuY_wHhUi76eQndY43j747aKj3tnkqnrR8nCvhhi1Osg575bjAx-T1XnSoLrnoyTHTWSi71untxh8k48wH1icaNZPiMifeUJvd4S3fGAy_FRS_4yxvd-3XkkEn4EkG4Mx5mdcHLgaolR6Fu2yDJWz14xn7qth2-2o-wggVMyQJFXkga95k_MT0MBcLzYvqgDNl1AKxXJsjmnJQLYOKSbcK3chc_XwbGWWqapKje);
+    opacity: 0.04;
+    pointer-events: none
+    }
+.animate-float {
+    animation: subtle-float 4s ease-in-out infinite
+    }
+.text-step-1 {
+    animation: fade-sequence 9s infinite 0s
+    }
+.text-step-2 {
+    animation: fade-sequence 9s infinite 3s
+    }
+.text-step-3 {
+    animation: fade-sequence 9s infinite 6s
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-lg min-h-screen relative overflow-hidden flex flex-col">
+<!-- Grain Texture Overlay -->
+<div class="fixed inset-0 grain-overlay z-[60]"></div>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col items-center justify-center px-lg text-center relative z-10">
+<!-- Animated Chef Hand Illustration Placeholder -->
+<div class="mb-xxl animate-float flex flex-col items-center">
+<div class="w-64 h-64 relative flex items-center justify-center">
+<!-- SVG Illustration of Chef's Hand holding a menu -->
+<svg class="w-full h-full fill-none stroke-primary" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 200 200">
+<!-- Stylized Hand -->
+<path class="stroke-primary" d="M60 140c0 0-10 0-10-15s15-30 40-35s50-5 60 10s5 35-5 45s-25 15-35 10"></path>
+<!-- Fingers/Menu Grip -->
+<path d="M120 100c10-10 25-10 35 0s5 30-5 40"></path>
+<!-- Menu Document -->
+<rect class="stroke-primary fill-surface-container-low" height="85" rx="4" transform="rotate(-15 105 82)" width="60" x="75" y="40"></rect>
+<!-- Saffron Detail Lines on Menu -->
+<line class="stroke-primary-container" transform="rotate(-15 105 82)" x1="85" x2="115" y1="55" y2="48"></line>
+<line class="stroke-primary-container" transform="rotate(-15 105 82)" x1="88" x2="118" y1="65" y2="58"></line>
+<line class="stroke-primary-container" transform="rotate(-15 105 82)" x1="91" x2="121" y1="75" y2="68"></line>
+<!-- Abstract Steam/Flavor Trails -->
+<path class="stroke-primary-fixed opacity-60" d="M150 60c5-10 15-10 15 0s-10 15-15 10"></path>
+<path class="stroke-primary-fixed opacity-40" d="M170 80c5-5 10-5 10 0s-5 10-10 5"></path>
+</svg>
+<!-- Inner soft glow -->
+<div class="absolute inset-0 bg-primary/5 rounded-full blur-3xl -z-10"></div>
+</div>
+</div>
+<!-- Sequential Text Messages -->
+<div class="relative h-12 w-full flex justify-center items-center overflow-hidden">
+<span class="absolute font-headline-md text-headline-md text-on-surface-variant text-step-1 opacity-0">Reading the menu...</span>
+<span class="absolute font-headline-md text-headline-md text-on-surface-variant text-step-2 opacity-0">Thinking about your mood...</span>
+<span class="absolute font-headline-md text-headline-md text-on-surface-variant text-step-3 opacity-0">Picking dishes...</span>
+</div>
+<!-- Progress Indicator -->
+<div class="mt-xl w-32 h-1 bg-surface-container-high rounded-full overflow-hidden relative">
+<div class="absolute inset-0 bg-primary-container w-1/2 rounded-full animate-[progress_3s_ease-in-out_infinite]"></div>
+<style>
+                @keyframes progress {
+                    0% { transform: translateX(-100%); }
+                    100% { transform: translateX(200%); }
+                }
+            </style>
+</div>
+<!-- Subtle Subtext -->
+<p class="mt-lg font-body-sm text-body-sm text-outline tracking-wide uppercase">Digital Concierge at work</p>
+</main>
+<!-- Branding Footer (Minimalist) -->
+<footer class="pb-xxl flex flex-col items-center gap-sm opacity-60">
+<span class="font-title-lg text-title-lg font-bold text-primary tracking-tight">Zaika</span>
+<span class="font-label-md text-label-md text-outline">Modern Hospitality</span>
+</footer>
+<!-- Decorative Elements (Abstract Patterns) -->
+<div class="absolute -top-20 -left-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-20 -right-20 w-96 h-96 bg-secondary/5 rounded-full blur-3xl"></div>
+</body></html>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <title>pickyeat — app icon (1024×1024 source)</title>
+  <desc>iOS / Android icon source. Saffron field, cream bowl, mint pick-dot. Corner radius is rounded-square; mask is iOS squircle compatible.</desc>
+  <rect width="1024" height="1024" rx="229" fill="#F26B3A"/>
+  <g transform="translate(232,488) scale(3.5)">
+    <path d="M 0 0 H 160 A 80 80 0 0 1 0 0 Z" fill="#FFF8EE"/>
+    <circle cx="128" cy="-44" r="22" fill="#2BB673"/>
+  </g>
+</svg>

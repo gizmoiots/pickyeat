@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Zaika - Your Picks</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&amp;family=Epilogue:ital,wght@0,600;0,700;1,600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#3c332c",
+                        "surface-dim": "#19120c",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#96d4aa",
+                        "secondary-fixed": "#b1f1c5",
+                        "on-surface": "#efe0d5",
+                        "surface-bright": "#413730",
+                        "secondary-container": "#115131",
+                        "primary": "#ffb878",
+                        "error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#004e5c",
+                        "secondary": "#96d4aa",
+                        "surface": "#19120c",
+                        "error": "#ffb4ab",
+                        "surface-container-highest": "#3c332c",
+                        "outline-variant": "#534437",
+                        "primary-container": "#e8923c",
+                        "surface-container": "#261e18",
+                        "inverse-on-surface": "#382f28",
+                        "on-primary-fixed-variant": "#6c3a00",
+                        "outline": "#a18d7e",
+                        "on-primary": "#4c2700",
+                        "on-secondary": "#00391f",
+                        "surface-container-low": "#221a14",
+                        "tertiary-fixed-dim": "#51d7f4",
+                        "surface-tint": "#ffb878",
+                        "inverse-primary": "#8e4f00",
+                        "on-secondary-container": "#85c39a",
+                        "on-tertiary-container": "#00424d",
+                        "on-secondary-fixed": "#002110",
+                        "surface-container-lowest": "#140d07",
+                        "on-tertiary-fixed": "#001f26",
+                        "primary-fixed-dim": "#ffb878",
+                        "surface-container-high": "#312822",
+                        "on-error": "#690005",
+                        "primary-fixed": "#ffdcc1",
+                        "tertiary-fixed": "#aaedff",
+                        "on-surface-variant": "#d9c2b2",
+                        "tertiary": "#51d7f4",
+                        "on-tertiary": "#003640",
+                        "background": "#19120c",
+                        "on-background": "#efe0d5",
+                        "on-primary-container": "#5c3100",
+                        "tertiary-container": "#17b5d1",
+                        "on-primary-fixed": "#2e1500",
+                        "on-secondary-fixed-variant": "#115131",
+                        "inverse-surface": "#efe0d5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "8px",
+                        "gutter": "16px",
+                        "container-margin": "20px",
+                        "sm": "12px",
+                        "base": "4px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "xl": "40px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Be Vietnam Pro"],
+                        "body-lg": ["Be Vietnam Pro"],
+                        "h2": ["Epilogue"],
+                        "body-md": ["Be Vietnam Pro"],
+                        "display": ["Epilogue"],
+                        "h1": ["Epilogue"],
+                        "label-sm": ["Be Vietnam Pro"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "h2": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "display": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "h1": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .texture-overlay {
+            background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuD0t7zEftZeLtk9is3tRxS6LRZ4YowNMCDiJOAQpYMRvmlM93cWh_saPhX4_nOONUXx88wIzQGbqt_6hyP9tfhh3FoW4bd9XB242c_tMBoGf8N7auga5Y3DOLtuQYcktrCBYQDx2comJOP0QTRxuwGobYnvH90eY1WlycH7gR49OhhFhqQ_BJ-ajWnjdljy5rjvab3KBVMzpFDx3OfKvoIPTNQVpMUiB4cYx9OBxEb3-0lLBKunA_385BUVqtaTw3ve1RlRJM8LzmlU);
+            opacity: 0.03;
+            pointer-events: none;
+        }
+        body {
+            min-height: 100dvh;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen">
+<div class="texture-overlay fixed inset-0 z-[100]"></div>
+<!-- Top App Bar -->
+<header class="bg-surface/90 backdrop-blur-md sticky top-0 z-50 flex justify-between items-center w-full px-md py-sm border-b border-outline-variant/20">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary" data-icon="restaurant_menu">restaurant_menu</span>
+<h1 class="font-h1 text-[24px] text-primary">Zaika</h1>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border border-outline-variant">
+<img alt="User profile avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsfMx2M8NNRsrU5BAo8TH5HM8tGR6pvnQID1Gw4t5eLJ46W_ROYF0oRiG6WrANdVWODBconbpoqHO1CM4DPOlkxMJkYXF98ve_D-rYwWYoPcmbzN7c8LFrcTty0B1R4AzJbj4gYCuse60Y3Td-gri_SW3GjQWiIwB8_sTHNGuG8-ZJg-uWsAMD182HJgus3VexB8Rrgbz3PYybv0_GsrAdvbHAZB0kJawFA2pqPtRRvgYYlz2gBHgQguR-aNMw6whuBit5AA92FGMi"/>
+</div>
+</header>
+<main class="px-md pb-[180px] max-w-2xl mx-auto">
+<!-- Context Header & Veg Toggle -->
+<section class="mt-lg mb-xl flex flex-col gap-md">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-label-sm text-secondary uppercase tracking-[0.2em] mb-base">Personalized Selections</p>
+<h2 class="font-h2 text-h2 italic text-on-surface">Here's what I'd get...</h2>
+</div>
+<div class="flex items-center gap-sm bg-surface-container-low p-xs rounded-full border border-outline-variant/30">
+<span class="font-label-sm px-xs text-outline">Veg Only</span>
+<button class="w-10 h-6 bg-secondary rounded-full relative transition-colors duration-300">
+<div class="absolute right-1 top-1 w-4 h-4 bg-surface rounded-full"></div>
+</button>
+</div>
+</div>
+</section>
+<!-- Dish List -->
+<div class="flex flex-col gap-xl">
+<!-- Card 1: Paneer Lababdar -->
+<article class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant/30 shadow-2xl">
+<div class="h-[240px] w-full relative">
+<img alt="Paneer Lababdar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeiWJcAjTPHrvlJ3gu9ztKsksSXR-sZK1RXvkwUWpEeh30n84_KLb-TwM4aF4jLgtF-UTp3rSAxVLkyYMjaBW-NkUSf6aD_Rz3I8Es9glTOZ4QMUe1K4DsflMk5s1juT1DXPa3kb71JcCqCk0haHyGpD0Mz-wiX2tppVx-V39pEr7TpBI37FLatVE5OrtYkF1iVthrew4_FWu4FGdxyGgU9R2nAMPkw3saw4696axdE7-mwJ9qPkO-QZVR6SR9vntq6nIkBxLYtNW6"/>
+<div class="absolute top-md left-md">
+<div class="bg-surface/80 backdrop-blur-md rounded-full px-sm py-xs flex items-center gap-xs border border-outline-variant/20">
+<div class="w-2 h-2 rounded-full bg-[#7FB069]"></div>
+<span class="font-label-sm text-[10px] text-on-surface">VEG</span>
+</div>
+</div>
+</div>
+<div class="p-md flex flex-col gap-md">
+<!-- Row 1: Title & Price -->
+<div class="flex justify-between items-center">
+<h3 class="font-h2 text-h2 text-on-surface">Paneer Lababdar</h3>
+<span class="font-h2 text-primary">₹380</span>
+</div>
+<!-- Row 2: Badges -->
+<div class="flex flex-wrap gap-sm">
+<span class="inline-flex items-center gap-xs px-sm py-xs bg-tertiary-container/10 text-tertiary rounded-full font-label-sm border border-tertiary/20">
+<span class="text-[14px]">🔥</span> Crowd Favorite
+                        </span>
+<span class="inline-flex items-center gap-xs px-sm py-xs bg-primary-container/10 text-primary rounded-full font-label-sm border border-primary/20">
+<span class="text-[14px]">🎯</span> Matches your taste
+                        </span>
+</div>
+<!-- Row 3: Reason Line -->
+<p class="text-on-surface-variant font-body-md italic border-l-2 border-primary/30 pl-md">
+                        "Three reviews obsessed over this. Rich, slightly spicy, exactly your full-meal vibe."
+                    </p>
+<!-- Row 4: Actions -->
+<div class="flex items-center justify-between pt-xs">
+<div class="flex gap-md">
+<button class="text-outline hover:text-error transition-colors active:scale-90">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+<button class="text-outline hover:text-secondary transition-colors active:scale-90">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</button>
+</div>
+<button class="bg-primary text-on-primary px-lg py-sm rounded-full font-label-md flex items-center gap-xs active:scale-95 transition-all shadow-lg shadow-primary/10">
+<span class="material-symbols-outlined text-[18px]" data-icon="check">check</span>
+                            I'll have this
+                        </button>
+</div>
+</div>
+</article>
+<!-- Card 2: Dal Tadka -->
+<article class="bg-surface-container-low rounded-xl overflow-hidden border border-outline-variant/10 opacity-60">
+<div class="h-[180px] w-full relative grayscale-[0.5]">
+<img alt="Dal Tadka" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqaOr_3D9kQ5v9aI2PCLpLBmmAilEDPGc-lAIQZTVk2iNS5c6KqxafvIItvYxy-2s3fFn6t_V-QvKxAibMb7rOApHqhjMOZ9-5RGlbij9ZKFqeFX4bbQdVOkzHgW87TMslDUiGtO9lYkB4Mof66_MF4uqKvFSSwwlbVe2yx0tk5Ehh-FpafOpr3NUtgXWGrGZuEGVMjD4XPiaM4_4ho_yvlH4Q8kwN_y_Xv2_dq25tQTFgkSEaX-QOpDch43WRh9I9tPTWwgwzpbMM"/>
+</div>
+<div class="p-md flex flex-col gap-md">
+<div class="flex justify-between items-center">
+<h3 class="font-h2 text-body-lg text-on-surface">Dal Tadka</h3>
+<span class="font-h2 text-body-lg text-primary">₹240</span>
+</div>
+<p class="text-on-surface-variant font-body-md italic">"Great for a lighter option, but the Paneer matches your previous preferences better."</p>
+<div class="flex items-center justify-end">
+<button class="border border-outline-variant text-on-surface px-lg py-sm rounded-full font-label-sm hover:bg-surface-variant transition-all">
+                            Add to meal
+                        </button>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- Sticky Bottom Selection Area -->
+<footer class="fixed bottom-0 w-full z-50 bg-surface/95 backdrop-blur-xl border-t border-outline-variant/30 px-md py-lg flex flex-col gap-md shadow-[0_-8px_32px_rgba(0,0,0,0.5)]">
+<div class="flex justify-between items-center px-xs">
+<span class="font-label-md text-on-surface">Selected <span class="text-primary font-bold">1 dish</span></span>
+<span class="font-h2 text-h2 text-on-background">≈ ₹380</span>
+</div>
+<div class="grid grid-cols-2 gap-md">
+<button class="border border-secondary text-secondary px-md py-sm rounded-full font-label-md flex items-center justify-center gap-xs hover:bg-secondary/10 transition-all active:scale-95">
+<span class="material-symbols-outlined text-[20px]" data-icon="refresh">refresh</span>
+                Try different mood
+            </button>
+<button class="border border-secondary text-secondary px-md py-sm rounded-full font-label-md flex items-center justify-center gap-xs hover:bg-secondary/10 transition-all active:scale-95">
+<span class="material-symbols-outlined text-[20px]" data-icon="menu_book">menu_book</span>
+                Browse menu
+            </button>
+</div>
+</footer>
+</body></html>

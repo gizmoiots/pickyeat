@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <title>pickyeat — order what you'll actually love</title>
+  <desc>Open Graph image. Brand mark + wordmark + tagline on Coconut background.</desc>
+  <rect width="1200" height="630" fill="#FFF8EE"/>
+
+  <!-- Decorative arc, top-left -->
+  <circle cx="-40" cy="80" r="200" fill="none" stroke="#1F1B16" stroke-width="0.5" opacity="0.08"/>
+  <!-- Decorative arc, bottom-right -->
+  <circle cx="1240" cy="560" r="240" fill="none" stroke="#1F1B16" stroke-width="0.5" opacity="0.08"/>
+
+  <!-- The lockup, centered -->
+  <g transform="translate(310, 220)">
+    <!-- Mark -->
+    <g transform="translate(0,0) scale(1.4)">
+      <path d="M 48 116 H 208 A 80 80 0 0 1 48 116 Z" fill="#F26B3A"/>
+      <circle cx="176" cy="72" r="22" fill="#2BB673"/>
+    </g>
+    <!-- Wordmark -->
+    <text x="365" y="200" font-family="'Plus Jakarta Sans','Inter','Helvetica Neue',Arial,sans-serif" font-size="140" font-weight="700" letter-spacing="-6" fill="#1F1B16">pickyeat</text>
+    <circle cx="935" cy="187" r="16" fill="#2BB673"/>
+  </g>
+
+  <!-- Tagline -->
+  <text x="600" y="490" text-anchor="middle" font-family="'Plus Jakarta Sans','Inter',sans-serif" font-size="28" font-weight="500" letter-spacing="6" fill="#7A6F62">SCAN &#x00B7; PICK &#x00B7; EAT</text>
+  <text x="600" y="540" text-anchor="middle" font-family="'Plus Jakarta Sans','Inter',sans-serif" font-size="22" font-weight="400" fill="#5C534A">order what you'll actually love</text>
+</svg>

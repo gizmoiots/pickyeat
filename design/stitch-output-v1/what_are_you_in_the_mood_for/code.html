@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-container": "#34704d",
+                    "on-tertiary-container": "#7a0e07",
+                    "on-secondary-fixed": "#002110",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed": "#410000",
+                    "primary-fixed-dim": "#ffb878",
+                    "surface-container-high": "#f0e6e0",
+                    "on-error": "#ffffff",
+                    "primary-fixed": "#ffdcc1",
+                    "tertiary-fixed": "#ffdad5",
+                    "on-surface-variant": "#534437",
+                    "tertiary": "#ab3326",
+                    "on-background": "#1f1b17",
+                    "background": "#fff8f4",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed-variant": "#115131",
+                    "on-primary-fixed": "#2e1500",
+                    "tertiary-container": "#ff816f",
+                    "on-primary-container": "#5c3100",
+                    "inverse-surface": "#34302b",
+                    "surface-variant": "#eae1da",
+                    "surface-dim": "#e1d8d2",
+                    "secondary-fixed-dim": "#96d4aa",
+                    "on-error-container": "#93000a",
+                    "secondary-container": "#b1f1c5",
+                    "surface-bright": "#fff8f4",
+                    "on-surface": "#1f1b17",
+                    "secondary-fixed": "#b1f1c5",
+                    "primary": "#8e4f00",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed-variant": "#8a1b12",
+                    "secondary": "#2e6a47",
+                    "surface": "#fff8f4",
+                    "outline-variant": "#d9c2b2",
+                    "surface-container-highest": "#eae1da",
+                    "error": "#ba1a1a",
+                    "primary-container": "#e8923c",
+                    "surface-container": "#f6ece5",
+                    "inverse-on-surface": "#f9efe8",
+                    "on-primary-fixed-variant": "#6c3a00",
+                    "on-primary": "#ffffff",
+                    "outline": "#867465",
+                    "on-secondary": "#ffffff",
+                    "surface-container-low": "#fcf2eb",
+                    "tertiary-fixed-dim": "#ffb4a8",
+                    "surface-tint": "#8e4f00",
+                    "inverse-primary": "#ffb878"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xxl": "48px",
+                    "sm": "8px",
+                    "xs": "4px",
+                    "md": "16px",
+                    "xl": "32px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "title-lg": ["Fraunces"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "headline-md": ["Fraunces"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "display-xl": ["Fraunces"],
+                    "caption": ["Plus Jakarta Sans"],
+                    "body-sm": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "title-lg": ["28px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "label-md": ["13px", {"lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "headline-md": ["22px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "body-lg": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "display-xl": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>body {
+    background-image: radial-gradient(#d9c2b2 0.5px, transparent 0.5px);
+    background-size: 24px 24px;
+    background-attachment: fixed
+    }
+.grain-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 99;
+    opacity: 0.03;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBiiDVZH8JucZqEgT2hrTVTbyhI7rIRGsRC-cJFZlD32XFzVtCVTmtXfvs2ePpNKbNA430Ebvz9p-U2Xjy2Tjl4BY9Iu9IeLDmKjgsmK0h7M_jekXPKQYFlJ86vBSMo8CG5r-pUyert_EdqmhC024QurTfGehi7_PYJ4kvrdtdPqt8K0HyIoiY6u6wGDM6_V2ETqu50ilGIyjqR1cA2_7WEx501OqwSJZ6oHHhcdTJalsyBy86nz7H4fr3d9iIy-TPdk81mj33mpYoO)
+    }
+.custom-shadow {
+    box-shadow: 0 4px 16px rgba(31, 27, 23, 0.06)
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col font-body-lg">
+<div class="grain-overlay"></div>
+<!-- Top App Bar -->
+<header class="bg-surface/90 backdrop-blur-md sticky top-0 z-50 flex justify-between items-center w-full px-md py-sm shadow-sm">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary" data-icon="restaurant_menu">restaurant_menu</span>
+<span class="font-title-lg text-title-lg font-bold text-primary tracking-tight">Zaika</span>
+</div>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant/30">
+<img alt="User avatar" data-alt="A professional and warm close-up portrait of a user for a premium food application. The avatar features a friendly individual with soft studio lighting against a warm ivory background. The style is clean, modern, and minimalist, using a soft color palette that complements the organic earth tones of the Zaika brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuApzbB43p-cru1KBtMmmmVRIqOEP_CDaxFqW7wqzUBM4heCoXItzwh1kyNRrMqKj2lpzK238ygyL1Ajf821ZjubG8aOazGAKlgDV3RyJQIvCXxU9Yc_xyXm5ZtxhfBlcY7gXhRbde5SHXPogXonpdLy7S4JPo60e2TCgqHqpuUVv31iFCbpmcpAaNeCZPNRUbKdNQNPASmnicgA_ldJWy618L0D4Q1vsHqpchC4AbNGTxoC4zkOMtp5nNjS8G5-ck0Ye8wfHIfuy4X2"/>
+</div>
+</header>
+<main class="flex-grow px-md py-lg max-w-md mx-auto w-full">
+<!-- Breadcrumb / Location -->
+<div class="mb-lg">
+<p class="font-label-md text-label-md text-outline flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]" data-icon="location_on">location_on</span>
+                📍 Cafe Mocha · 47 scans here
+            </p>
+</div>
+<!-- Segmented Toggle -->
+<div class="bg-surface-container-low rounded-full p-xs flex mb-xl border border-outline-variant/20">
+<button class="flex-1 py-sm px-md rounded-full bg-surface-container-lowest text-on-secondary-container font-label-md flex items-center justify-center gap-sm shadow-sm transition-all active:scale-95">
+<span class="w-2 h-2 rounded-full bg-[#7FB069]"></span>
+                Veg only
+            </button>
+<button class="flex-1 py-sm px-md rounded-full text-outline font-label-md flex items-center justify-center gap-sm hover:text-on-surface transition-all active:scale-95">
+<span class="w-2 h-2 rounded-full bg-[#C44536]"></span>
+                Anything
+            </button>
+</div>
+<!-- Page Header -->
+<h1 class="font-title-lg text-title-lg text-on-background mb-xl leading-tight">
+            Late evening cravings?
+        </h1>
+<!-- Tier 1 Chips: Grid -->
+<section class="grid grid-cols-2 gap-md mb-xxl">
+<!-- Selected Item -->
+<button class="h-[60px] w-full rounded-xl bg-primary-container text-on-primary-container flex items-center justify-center gap-sm custom-shadow border border-primary/20 active:scale-95 transition-all">
+<span class="text-[20px]">🍽️</span>
+<span class="font-label-md">Full meal</span>
+</button>
+<button class="h-[60px] w-full rounded-xl bg-surface-container text-on-surface-variant flex items-center justify-center gap-sm custom-shadow hover:bg-surface-container-high active:scale-95 transition-all">
+<span class="text-[20px]">⚡</span>
+<span class="font-label-md">Quick bite</span>
+</button>
+<button class="h-[60px] w-full rounded-xl bg-surface-container text-on-surface-variant flex items-center justify-center gap-sm custom-shadow hover:bg-surface-container-high active:scale-95 transition-all">
+<span class="text-[20px]">☕</span>
+<span class="font-label-md">Just drinks</span>
+</button>
+<button class="h-[60px] w-full rounded-xl bg-surface-container text-on-surface-variant flex items-center justify-center gap-sm custom-shadow hover:bg-surface-container-high active:scale-95 transition-all">
+<span class="text-[20px]">🍰</span>
+<span class="font-label-md">Just dessert</span>
+</button>
+</section>
+<!-- Tier 2 Chips: Tell me more -->
+<section>
+<h2 class="font-label-md text-label-md text-outline uppercase tracking-widest mb-md">
+                Tell me more:
+            </h2>
+<div class="flex flex-wrap gap-sm">
+<button class="px-lg py-sm rounded-full bg-surface-container text-on-surface font-label-md flex items-center gap-xs border border-outline-variant/30 hover:border-primary active:scale-95 transition-all">
+<span>🌶️</span>
+                    Spicy
+                </button>
+<button class="px-lg py-sm rounded-full bg-surface-container text-on-surface font-label-md flex items-center gap-xs border border-outline-variant/30 hover:border-primary active:scale-95 transition-all">
+<span>😌</span>
+                    Mild
+                </button>
+<button class="px-lg py-sm rounded-full bg-surface-container text-on-surface font-label-md flex items-center gap-xs border border-outline-variant/30 hover:border-primary active:scale-95 transition-all">
+<span>🥗</span>
+                    Light
+                </button>
+</div>
+</section>
+<!-- Visual Context Card -->
+<div class="mt-xxl rounded-xl overflow-hidden relative h-48 custom-shadow">
+<img class="w-full h-full object-cover" data-alt="A high-end, cozy restaurant interior at dusk, featuring warm ambient lighting and elegant wooden furniture. The atmosphere is intimate and sophisticated, with soft ivory and deep cardamom green accents. In the background, blurred hints of patrons enjoying a peaceful late evening meal create a sense of digital hospitality and comfort." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3sHgjVgQbljTdherMJXUiUGlFFS96L_9j_pmpIC-3zF601hmvlsJTggtqSr9RQKGHrMAPMMyfDwXxlBV5p_7Cu1f-84RYBabOvYkQyF2MAyLvyDqKplXxTrUBgRZojxLoMIhtLWyFmnLBo6RXbso_H1KoYcSg2rNPtekfVuf7n83esb6Iagq3Jb0Q9-hOCUZ5fpN8IVLJXQD33MfnzVOhmOBksfgh8vrUt16pI-D9DbK_JEPegvpg3M7U13ioyYOQQAoksdh-OSJu"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+</div>
+</main>
+<!-- Floating Action Button -->
+<div class="fixed bottom-lg left-0 right-0 px-md z-50 flex justify-center pointer-events-none">
+<button class="pointer-events-auto bg-primary-container text-on-primary-container px-xxl py-md rounded-full shadow-lg flex items-center gap-md active:scale-95 transition-transform duration-200 border-2 border-primary/10">
+<span class="text-[20px]">🍜</span>
+<span class="font-label-md text-[16px]">Show picks (2)</span>
+</button>
+</div>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface/90 backdrop-blur-md flex justify-around items-center px-md py-sm pb-safe shadow-[0_-4px_16px_rgba(31,27,23,0.04)] border-t border-outline-variant/30">
+<div class="flex flex-col items-center justify-center text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[24px]" data-icon="home">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[24px]" data-icon="bookmark">bookmark</span>
+<span class="font-label-md text-label-md">Saved</span>
+</div>
+<div class="flex flex-col items-center justify-center text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[24px]" data-icon="history">history</span>
+<span class="font-label-md text-label-md">History</span>
+</div>
+<div class="flex flex-col items-center justify-center text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[24px]" data-icon="person">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</div>
+</nav>
+<!-- Content padding for bottom nav -->
+<div class="h-24"></div>
+</body></html>

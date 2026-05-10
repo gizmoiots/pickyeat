@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#34704d",
+                        "on-tertiary-container": "#7a0e07",
+                        "on-secondary-fixed": "#002110",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#410000",
+                        "primary-fixed-dim": "#ffb878",
+                        "surface-container-high": "#f0e6e0",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#ffdcc1",
+                        "tertiary-fixed": "#ffdad5",
+                        "on-surface-variant": "#534437",
+                        "tertiary": "#ab3326",
+                        "on-background": "#1f1b17",
+                        "background": "#fff8f4",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#115131",
+                        "on-primary-fixed": "#2e1500",
+                        "tertiary-container": "#ff816f",
+                        "on-primary-container": "#5c3100",
+                        "inverse-surface": "#34302b",
+                        "surface-variant": "#eae1da",
+                        "surface-dim": "#e1d8d2",
+                        "secondary-fixed-dim": "#96d4aa",
+                        "on-error-container": "#93000a",
+                        "secondary-container": "#b1f1c5",
+                        "surface-bright": "#fff8f4",
+                        "on-surface": "#1f1b17",
+                        "secondary-fixed": "#b1f1c5",
+                        "primary": "#8e4f00",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#8a1b12",
+                        "secondary": "#2e6a47",
+                        "surface": "#fff8f4",
+                        "outline-variant": "#d9c2b2",
+                        "surface-container-highest": "#eae1da",
+                        "error": "#ba1a1a",
+                        "primary-container": "#e8923c",
+                        "surface-container": "#f6ece5",
+                        "inverse-on-surface": "#f9efe8",
+                        "on-primary-fixed-variant": "#6c3a00",
+                        "on-primary": "#ffffff",
+                        "outline": "#867465",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#fcf2eb",
+                        "tertiary-fixed-dim": "#ffb4a8",
+                        "surface-tint": "#8e4f00",
+                        "inverse-primary": "#ffb878"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xxl": "48px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "md": "16px",
+                        "xl": "32px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "title-lg": ["Fraunces"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "headline-md": ["Fraunces"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "display-xl": ["Fraunces"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "body-sm": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "title-lg": ["28px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "label-md": ["13px", {"lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "headline-md": ["22px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "body-lg": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "display-xl": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>.grain-overlay {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCiCq-8UzR3swCr1c6n1Bk1q9VM3IEICuDGXSBYPnqmAt12ZhekwmlAjss1xeAV7DwqgUDbdr3zs4kvDZE6iduwNL9jhItCxo4c5aPoA08zc-W5IAkVJjFv3stjZ-QHZk9SLPzwEzkGLtpV-gUnnWcHehuKYzgS23AqINJWhrptRFI1EIe7Pbtk1HzdrCA-EvgzmgOlMa15xknNMz_fTXs8JG3JX-nTwVc-AQf5p42J0YXM_H4V5sJSZHfJXlXLO6F8sehac96TS9ab);
+    opacity: 0.03;
+    pointer-events: none
+    }
+.bottom-sheet-shadow {
+    box-shadow: 0 -8px 24px rgba(31, 27, 23, 0.12)
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-lg min-h-screen">
+<!-- Grain Texture Overlay -->
+<div class="fixed inset-0 grain-overlay z-[100]"></div>
+<!-- Background Content (Picks Screen Simulation) -->
+<div class="p-md space-y-lg blur-[2px] opacity-40">
+<header class="flex justify-between items-center py-sm">
+<span class="font-title-lg text-title-lg text-primary font-bold tracking-tight">Zaika</span>
+<div class="w-10 h-10 rounded-full bg-surface-container-high"></div>
+</header>
+<div class="grid grid-cols-2 gap-md">
+<div class="h-48 bg-surface-container rounded-xl"></div>
+<div class="h-48 bg-surface-container rounded-xl"></div>
+<div class="h-48 bg-surface-container rounded-xl"></div>
+<div class="h-48 bg-surface-container rounded-xl"></div>
+</div>
+</div>
+<!-- Bottom Sheet Backdrop -->
+<div class="fixed inset-0 bg-on-background/20 z-40 backdrop-blur-[1px]"></div>
+<!-- Dish Detail Bottom Sheet -->
+<main class="fixed bottom-0 left-0 right-0 z-50 bg-surface rounded-t-[24px] bottom-sheet-shadow max-h-[813px] overflow-y-auto">
+<!-- Drag Handle -->
+<div class="flex justify-center pt-md pb-xs">
+<div class="w-12 h-1 bg-outline-variant/40 rounded-full"></div>
+</div>
+<!-- Hero Section -->
+<section class="relative h-[250px] w-full px-md">
+<div class="relative h-full w-full rounded-xl overflow-hidden shadow-sm">
+<img alt="Paneer Lababdar" class="w-full h-full object-cover" data-alt="A close-up, high-angle shot of a premium Paneer Lababdar dish served in a traditional handcrafted copper bowl. The rich, orange-red gravy is topped with a swirl of fresh cream and chopped cilantro. The scene is bathed in warm, soft sunlight, emphasizing the creamy texture and vibrant saffron tones. The background is a minimalist ivory table setting, conveying a high-end editorial food journal aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBffgGEZlXsTbU-V3tXO8e76lQkwT7-vhxaI546V1h8UaAiMhEWDohTJ6zKtNTU-YUYRRpw08nRsyciO-l4R_GSuHOfQiMeQ61-48D3AWBT0CWS0j9RqSfnylltsKbRyNXkzk-yCsQaSp9XAhyVToIs8L0SrjJ4eRIRimrXasOFBNnuxyDmzupHU2H9Vz7kJz0k6qqMOTNuw1jXxvx7Fi3PMzffFt63kz9X_09_lAFcjd6bQBY9AflJLklxMjAfZO_qxjL__Xx551E"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent mix-blend-multiply"></div>
+<button class="absolute top-md right-md w-10 h-10 flex items-center justify-center bg-surface/80 backdrop-blur-md rounded-full text-on-surface hover:bg-surface transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+</section>
+<!-- Content Area -->
+<section class="px-md pt-lg pb-xxl space-y-xl">
+<!-- Title & Price Header -->
+<div class="flex flex-col space-y-xs">
+<div class="flex justify-between items-start">
+<h1 class="font-title-lg text-title-lg text-on-surface">Paneer Lababdar</h1>
+<span class="font-headline-md text-headline-md text-primary">₹380</span>
+</div>
+<div class="flex items-center gap-sm">
+<span class="flex items-center gap-xs px-sm py-[2px] bg-secondary-container text-on-secondary-container rounded-full text-[11px] font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">stars</span>
+                        Crowd Favorite
+                    </span>
+<div class="w-3 h-3 rounded-full bg-[#7FB069]" title="Vegetarian"></div>
+</div>
+</div>
+<!-- About Section -->
+<div class="space-y-sm">
+<h2 class="font-label-md text-label-md text-outline uppercase tracking-widest">About this dish</h2>
+<p class="font-body-lg text-on-surface-variant leading-relaxed italic">
+                    A luxurious medley of soft cottage cheese cubes simmered in a velvety tomato-onion gravy, enriched with the smoky whispers of roasted cumin and the gentle warmth of hand-ground spices. It is a soulful journey through the royal kitchens of North India.
+                </p>
+</div>
+<!-- Tastes Like Tags -->
+<div class="space-y-md">
+<h2 class="font-label-md text-label-md text-outline uppercase tracking-widest">Tastes like</h2>
+<div class="flex flex-wrap gap-sm">
+<span class="flex items-center gap-xs px-md py-sm bg-surface-container-low border border-outline-variant/30 rounded-full font-label-md text-label-md text-on-surface-variant">
+                        🌶️ Spicy
+                    </span>
+<span class="flex items-center gap-xs px-md py-sm bg-surface-container-low border border-outline-variant/30 rounded-full font-label-md text-label-md text-on-surface-variant">
+                        🧈 Rich
+                    </span>
+<span class="flex items-center gap-xs px-md py-sm bg-surface-container-low border border-outline-variant/30 rounded-full font-label-md text-label-md text-on-surface-variant">
+                        🌿 Aromatic
+                    </span>
+</div>
+</div>
+<!-- Warning Box -->
+<div class="p-md bg-error-container/20 border border-error-container rounded-xl flex items-start gap-md">
+<span class="material-symbols-outlined text-error text-[20px]">warning</span>
+<p class="font-body-sm text-on-tertiary-fixed-variant">
+                    ⚠️ This dish may contain nuts. Please inform your server of any allergies before placing your order.
+                </p>
+</div>
+</section>
+<!-- Sticky Bottom CTA -->
+<div class="sticky bottom-0 left-0 right-0 p-md bg-surface/90 backdrop-blur-md border-t border-outline-variant/10">
+<button class="w-full h-14 bg-primary-container hover:bg-primary-container/90 active:scale-[0.98] transition-all duration-200 rounded-full shadow-lg flex items-center justify-center gap-sm text-on-primary-container font-label-md text-[16px] font-bold">
+<span class="material-symbols-outlined">add_circle</span>
+                Add to my picks
+            </button>
+<div class="h-safe"></div>
+</div>
+</main>
+<!-- Bottom Navigation (Shared Component Integration) -->
+<!-- Hidden because detail modal is a task-focused sub-page per the "Semantic Shell" mandate -->
+</body></html>

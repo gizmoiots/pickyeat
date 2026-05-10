@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#f6ece4",
+                        "secondary-fixed-dim": "#ffb5a1",
+                        "tertiary": "#006d40",
+                        "secondary-fixed": "#ffdbd1",
+                        "surface-dim": "#e2d8d0",
+                        "secondary-container": "#ff6940",
+                        "inverse-primary": "#ffb59c",
+                        "on-primary-fixed": "#390c00",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#00351d",
+                        "on-primary-fixed-variant": "#832700",
+                        "on-secondary-fixed-variant": "#881f00",
+                        "on-surface": "#1f1b16",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#611400",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#eae1d8",
+                        "on-tertiary-fixed": "#002110",
+                        "surface-container-high": "#f0e7de",
+                        "surface-variant": "#eae1d8",
+                        "outline": "#8c7169",
+                        "primary-container": "#f26b3a",
+                        "tertiary-fixed": "#7afbb1",
+                        "secondary": "#af3009",
+                        "tertiary-container": "#14aa68",
+                        "on-primary-container": "#571700",
+                        "primary-fixed": "#ffdbd0",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-surface": "#34302a",
+                        "surface-bright": "#fff8f3",
+                        "tertiary-fixed-dim": "#5cde97",
+                        "background": "#fff8f3",
+                        "on-tertiary-fixed-variant": "#00522f",
+                        "surface-tint": "#a93705",
+                        "primary": "#a93705",
+                        "inverse-on-surface": "#f9efe6",
+                        "surface": "#fff8f3",
+                        "primary-fixed-dim": "#ffb59c",
+                        "on-surface-variant": "#58413a",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed": "#3b0800",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#fcf2e9",
+                        "on-background": "#1f1b16",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#e0c0b6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "gutter": "12px",
+                        "unit": "4px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "sm": "8px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "body-rg": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "ui-label-sm": ["Plus Jakarta Sans"],
+                        "body-sm": ["Plus Jakarta Sans"],
+                        "ui-label": ["Plus Jakarta Sans"],
+                        "display-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-rg": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                        "display-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "ui-label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "body-sm": ["14px", {"lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "400"}],
+                        "ui-label": ["14px", {"lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "display-md": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background: #a93705;
+            border: 2px solid #fff8f3;
+            cursor: pointer;
+        }
+        .sprig-dot {
+            width: 6px;
+            height: 6px;
+            background-color: #2BB673;
+            border-radius: 9999px;
+            display: inline-block;
+            margin-right: 8px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface flex justify-between items-center w-full px-margin-mobile py-sm border-b-[0.5px] border-outline/20 sticky top-0 z-50">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary transition-all duration-200 active:scale-95 cursor-pointer">arrow_back</span>
+<h1 class="font-display-md text-display-md text-primary dark:text-primary-fixed-dim">pickyeat</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant transition-all duration-200 active:scale-95 cursor-pointer" data-icon="notifications">notifications</span>
+<div class="w-8 h-8 rounded-full bg-surface-container-high border-[0.5px] border-on-surface/10 overflow-hidden">
+<img alt="User avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAloY3P8WvHbR0W2eUGbQSSffhTZZMMp3CgjEuPUVYrA7Z9DeohfxQ1jnH8BujbjU41FOeSVfWGNdpPO-QUuasf-xBS5qyD4nrvzx11pCUUFmg2EODJUm4RC-fM9impVvOHMjsSXMVTejxN_z9PwAjRL4UB64gI2lLtBXhrM7neumoHItpYuPmywUrrTv2Q5dLachK6ceztcaP51mZrcDHV72cdKvGGNSyIbuIbYYaz1zOSYOhZmkE0o8BAGTW_U8QBIW8l-R7L80rv"/>
+</div>
+</div>
+</header>
+<main class="px-margin-mobile py-lg max-w-2xl mx-auto">
+<!-- Header Section -->
+<section class="mb-xl">
+<h2 class="font-display-lg text-display-lg text-on-surface mb-2">Health mode<span class="text-[#2BB673]">.</span></h2>
+<p class="font-body-rg text-body-rg text-on-surface-variant">Configure your nutritional preferences and dietary boundaries.</p>
+</section>
+<!-- Calorie Slider Card -->
+<section class="mb-lg p-md bg-surface-container-low rounded-xl border-[0.5px] border-on-surface/15">
+<div class="flex justify-between items-center mb-md">
+<label class="font-ui-label text-ui-label text-on-surface uppercase tracking-wider">Daily calorie target</label>
+<span class="font-display-md text-display-md text-primary">2,250 <span class="text-ui-label-sm">kcal</span></span>
+</div>
+<input class="w-full h-1.5 bg-surface-container-highest rounded-full appearance-none cursor-pointer accent-primary" max="4000" min="1200" step="50" type="range" value="2250"/>
+<div class="flex justify-between mt-sm">
+<span class="font-ui-label-sm text-ui-label-sm text-on-surface-variant">1,200</span>
+<span class="font-ui-label-sm text-ui-label-sm text-on-surface-variant">4,000</span>
+</div>
+</section>
+<!-- Macro Focus Selection -->
+<section class="mb-xl">
+<h3 class="font-ui-label text-ui-label text-on-surface-variant mb-md">Macro focus</h3>
+<div class="flex flex-wrap gap-gutter">
+<!-- High Protein (Selected State) -->
+<button class="flex items-center px-md py-sm bg-surface rounded-full border-[0.5px] border-on-surface transition-all duration-200 active:scale-95">
+<span class="sprig-dot"></span>
+<span class="font-ui-label text-ui-label text-on-surface">high protein</span>
+</button>
+<!-- Low Carb (Unselected State) -->
+<button class="flex items-center px-md py-sm bg-surface rounded-full border-[0.5px] border-on-surface/20 hover:border-on-surface transition-all duration-200 active:scale-95">
+<span class="font-ui-label text-ui-label text-on-surface-variant">low carb</span>
+</button>
+<!-- Balanced (Unselected State) -->
+<button class="flex items-center px-md py-sm bg-surface rounded-full border-[0.5px] border-on-surface/20 hover:border-on-surface transition-all duration-200 active:scale-95">
+<span class="font-ui-label text-ui-label text-on-surface-variant">balanced</span>
+</button>
+</div>
+</section>
+<!-- Specific Diet Chips -->
+<section class="mb-xl">
+<h3 class="font-ui-label text-ui-label text-on-surface-variant mb-md">Dietary style</h3>
+<div class="grid grid-cols-2 gap-gutter">
+<div class="p-md bg-surface rounded-xl border-[0.5px] border-on-surface/15 flex items-center justify-between hover:border-primary transition-colors cursor-pointer">
+<span class="font-body-rg text-body-rg">Ketogenic</span>
+<div class="w-5 h-5 rounded-full border-[0.5px] border-on-surface/30 flex items-center justify-center">
+<div class="w-2.5 h-2.5 rounded-full bg-tertiary opacity-0"></div>
+</div>
+</div>
+<div class="p-md bg-surface rounded-xl border-[0.5px] border-on-surface flex items-center justify-between cursor-pointer">
+<span class="font-body-rg text-body-rg">Mediterranean</span>
+<div class="w-5 h-5 rounded-full border-[0.5px] border-on-surface flex items-center justify-center">
+<div class="w-2.5 h-2.5 rounded-full bg-tertiary"></div>
+</div>
+</div>
+<div class="p-md bg-surface rounded-xl border-[0.5px] border-on-surface/15 flex items-center justify-between hover:border-primary transition-colors cursor-pointer">
+<span class="font-body-rg text-body-rg">Paleo</span>
+<div class="w-5 h-5 rounded-full border-[0.5px] border-on-surface/30 flex items-center justify-center">
+<div class="w-2.5 h-2.5 rounded-full bg-tertiary opacity-0"></div>
+</div>
+</div>
+<div class="p-md bg-surface rounded-xl border-[0.5px] border-on-surface/15 flex items-center justify-between hover:border-primary transition-colors cursor-pointer">
+<span class="font-body-rg text-body-rg">Plant-based</span>
+<div class="w-5 h-5 rounded-full border-[0.5px] border-on-surface/30 flex items-center justify-center">
+<div class="w-2.5 h-2.5 rounded-full bg-tertiary opacity-0"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Allergen Multi-select -->
+<section class="mb-xl">
+<h3 class="font-ui-label text-ui-label text-on-surface-variant mb-md">Allergens &amp; exclusions</h3>
+<div class="flex flex-wrap gap-xs">
+<div class="px-md py-sm rounded-full bg-surface border-[0.5px] border-on-surface flex items-center gap-2">
+<span class="sprig-dot"></span>
+<span class="font-ui-label text-ui-label">nuts</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">close</span>
+</div>
+<div class="px-md py-sm rounded-full bg-surface border-[0.5px] border-on-surface flex items-center gap-2">
+<span class="sprig-dot"></span>
+<span class="font-ui-label text-ui-label">dairy</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">close</span>
+</div>
+<div class="px-md py-sm rounded-full bg-surface-container-highest border-[0.5px] border-transparent flex items-center gap-2 text-on-surface-variant/40">
+<span class="font-ui-label text-ui-label">gluten</span>
+<span class="material-symbols-outlined text-[18px]">add</span>
+</div>
+<div class="px-md py-sm rounded-full bg-surface-container-highest border-[0.5px] border-transparent flex items-center gap-2 text-on-surface-variant/40">
+<span class="font-ui-label text-ui-label">shellfish</span>
+<span class="material-symbols-outlined text-[18px]">add</span>
+</div>
+<div class="px-md py-sm rounded-full bg-surface-container-highest border-[0.5px] border-transparent flex items-center gap-2 text-on-surface-variant/40">
+<span class="font-ui-label text-ui-label">soy</span>
+<span class="material-symbols-outlined text-[18px]">add</span>
+</div>
+</div>
+</section>
+<!-- CTA & Note -->
+<section class="mt-xl text-center">
+<button class="w-full bg-primary text-on-primary font-ui-label py-md rounded-xl transition-all duration-200 active:scale-95 mb-md">
+                Update Health Mode
+            </button>
+<p class="font-ui-label-sm text-ui-label-sm text-on-surface-variant/60 italic">
+                macros are estimates, ±20%
+            </p>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface dark:bg-surface py-md px-margin-mobile pb-safe border-t-[0.5px] border-outline/20">
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-dim transition-transform duration-200 active:scale-90 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-ui-label-sm text-ui-label-sm">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim relative after:content-[''] after:w-1.5 after:h-1.5 after:bg-tertiary after:rounded-full after:mt-1 hover:bg-surface-container-low dark:hover:bg-surface-dim transition-transform duration-200 active:scale-90 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-ui-label-sm text-ui-label-sm">Profile</span>
+</div>
+</nav>
+</body></html>

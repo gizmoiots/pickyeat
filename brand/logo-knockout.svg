@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <title>pickyeat — knockout mark on saffron</title>
+  <desc>Cream bowl with mint pick-dot on saffron field. Use for app icon, hero panels, social avatars.</desc>
+  <rect width="256" height="256" rx="56" fill="#F26B3A"/>
+  <g transform="translate(0,8)">
+    <path d="M 48 116 H 208 A 80 80 0 0 1 48 116 Z" fill="#FFF8EE"/>
+    <circle cx="176" cy="72" r="22" fill="#2BB673"/>
+  </g>
+</svg>
