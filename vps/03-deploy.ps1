@@ -1,4 +1,4 @@
-# pickyeat — Deploy the Node backend to C:\pickyeat\server
+# pickyeat -- Deploy the Node backend to C:\pickyeat\server
 # Clones the GitHub repo, installs deps, builds TypeScript, registers a pm2 process on 127.0.0.1:4000.
 # Does NOT touch SROS, IIS, or any existing services.
 #
@@ -11,7 +11,7 @@ $ErrorActionPreference = 'Stop'
 function Step($msg) { Write-Host "`n>> $msg" -ForegroundColor Cyan }
 function Ok($msg)   { Write-Host "  [OK]   $msg" -ForegroundColor Green }
 
-# ── Config ────────────────────────────────────────────────────────────
+# -- Config ------------------------------------------------------------
 $REPO        = 'https://github.com/gizmoiots/pickyeat.git'
 $INSTALL_DIR = 'C:\pickyeat'
 $APP_DIR     = "$INSTALL_DIR\app\backend"        # the Express backend in the monorepo
@@ -20,11 +20,11 @@ $PORT        = 4000
 $ENV_FILE    = "$APP_DIR\.env"
 $PM2         = "$env:APPDATA\npm\pm2.cmd"
 
-# ── 1. Clone (or refuse if folder already exists, to be safe) ────────
+# -- 1. Clone (or refuse if folder already exists, to be safe) --------
 Step "Clone repo to $INSTALL_DIR"
 if (Test-Path $INSTALL_DIR) {
     if (Test-Path "$INSTALL_DIR\.git") {
-        Write-Host "  $INSTALL_DIR already a git repo — pulling latest" -ForegroundColor Yellow
+        Write-Host "  $INSTALL_DIR already a git repo -- pulling latest" -ForegroundColor Yellow
         Push-Location $INSTALL_DIR
         & git fetch --all
         & git reset --hard origin/main
@@ -37,7 +37,7 @@ if (Test-Path $INSTALL_DIR) {
     Ok 'cloned'
 }
 
-# ── 2. Install deps + build ─────────────────────────────────────────
+# -- 2. Install deps + build -----------------------------------------
 Step "Install + build backend at $APP_DIR"
 Push-Location $APP_DIR
 & npm ci --include=dev
@@ -45,7 +45,7 @@ Push-Location $APP_DIR
 Pop-Location
 Ok 'build complete'
 
-# ── 3. Write .env (prompts if not already there) ────────────────────
+# -- 3. Write .env (prompts if not already there) --------------------
 Step 'Write .env'
 if (-not (Test-Path $ENV_FILE)) {
     Write-Host '  No .env found. You can either:'
@@ -53,7 +53,7 @@ if (-not (Test-Path $ENV_FILE)) {
     Write-Host '    B) Paste each value now (will not echo)'
     Write-Host ''
     $choice = Read-Host '  Pick A or B'
-    if ($choice -eq 'A') { throw 'Aborted — copy .env then re-run.' }
+    if ($choice -eq 'A') { throw 'Aborted -- copy .env then re-run.' }
 
     function Ask($label, [switch]$secure) {
         if ($secure) {
@@ -94,13 +94,13 @@ SWIGGY_AFFILIATE_CODE=PICKYEAT
     [IO.File]::WriteAllText($ENV_FILE, $env_body)
     Ok ".env written to $ENV_FILE"
 } else {
-    Ok ".env already exists at $ENV_FILE — leaving untouched"
+    Ok ".env already exists at $ENV_FILE -- leaving untouched"
 }
 
-# ── 4. Register with pm2 ────────────────────────────────────────────
+# -- 4. Register with pm2 --------------------------------------------
 Step "Register pm2 process '$PM2_NAME' on port $PORT"
 
-# Stop+delete any previous instance (only pickyeat — not SROS)
+# Stop+delete any previous instance (only pickyeat -- not SROS)
 & $PM2 delete $PM2_NAME 2>$null | Out-Null
 
 # Start
@@ -113,7 +113,7 @@ Pop-Location
 
 Ok "pm2 process '$PM2_NAME' running on port $PORT"
 
-# ── 5. Self-test ────────────────────────────────────────────────────
+# -- 5. Self-test ----------------------------------------------------
 Step 'Local health check'
 Start-Sleep -Seconds 3
 try {

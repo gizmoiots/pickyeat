@@ -1,4 +1,4 @@
-# pickyeat — Add IIS reverse proxy site for api.pickyeat.com
+# pickyeat -- Add IIS reverse proxy site for api.pickyeat.com
 # Creates a NEW IIS site, never modifies existing ones (SROS at xenios.in stays untouched).
 # Uses SNI so api.pickyeat.com can share port 443 with xenios.in.
 #
@@ -12,14 +12,14 @@ Import-Module WebAdministration
 function Step($msg) { Write-Host "`n>> $msg" -ForegroundColor Cyan }
 function Ok($msg)   { Write-Host "  [OK]   $msg" -ForegroundColor Green }
 
-# ── Config ─────────────────────────────────────────────────────────────
+# -- Config -------------------------------------------------------------
 $SITE_NAME   = 'pickyeat-api'
 $HOSTNAME    = 'api.pickyeat.com'
 $BACKEND_PORT = 4000
-$SITE_ROOT   = 'C:\pickyeat\iis-root'   # empty folder — IIS serves nothing from disk, only proxies
+$SITE_ROOT   = 'C:\pickyeat\iis-root'   # empty folder -- IIS serves nothing from disk, only proxies
 $WEB_CONFIG  = "$SITE_ROOT\web.config"
 
-# ── 1. Refuse to overwrite existing pickyeat-api or any other site we'd collide with ──
+# -- 1. Refuse to overwrite existing pickyeat-api or any other site we'd collide with --
 Step 'Pre-flight checks'
 $existing = Get-Website -Name $SITE_NAME -ErrorAction SilentlyContinue
 if ($existing) {
@@ -29,12 +29,12 @@ if ($existing) {
 # Confirm SROS's site is present and we won't fight over hostnames
 $srosSite = Get-Website | Where-Object { ($_.Bindings.Collection | ForEach-Object { $_.bindingInformation }) -match 'xenios.in' }
 if ($srosSite) {
-    Ok "found SROS site '$($srosSite.Name)' on xenios.in — will not touch it"
+    Ok "found SROS site '$($srosSite.Name)' on xenios.in -- will not touch it"
 } else {
-    Write-Host '  Could NOT find an existing site for xenios.in. This is unexpected but not fatal — continuing.' -ForegroundColor Yellow
+    Write-Host '  Could NOT find an existing site for xenios.in. This is unexpected but not fatal -- continuing.' -ForegroundColor Yellow
 }
 
-# ── 2. Create empty site root + web.config with ARR reverse-proxy rule ──
+# -- 2. Create empty site root + web.config with ARR reverse-proxy rule --
 Step "Create site root at $SITE_ROOT"
 New-Item -ItemType Directory -Path $SITE_ROOT -Force | Out-Null
 
@@ -70,7 +70,7 @@ $webConfigXml = @"
 [IO.File]::WriteAllText($WEB_CONFIG, $webConfigXml)
 Ok "web.config written"
 
-# Allow rewrite to set server variables (one-time, server level — same setting SROS already uses)
+# Allow rewrite to set server variables (one-time, server level -- same setting SROS already uses)
 $allowed = (Get-WebConfiguration 'system.webServer/rewrite/allowedServerVariables' -PSPath 'MACHINE/WEBROOT/APPHOST').Collection | ForEach-Object { $_.name }
 foreach ($v in 'HTTP_X_FORWARDED_HOST','HTTP_X_FORWARDED_PROTO') {
     if ($allowed -notcontains $v) {
@@ -79,7 +79,7 @@ foreach ($v in 'HTTP_X_FORWARDED_HOST','HTTP_X_FORWARDED_PROTO') {
     }
 }
 
-# ── 3. Create the IIS site bound on HTTP only (port 80, hostname-scoped) ──
+# -- 3. Create the IIS site bound on HTTP only (port 80, hostname-scoped) --
 Step "Create IIS site $SITE_NAME"
 New-Website -Name $SITE_NAME `
             -PhysicalPath $SITE_ROOT `
@@ -87,13 +87,13 @@ New-Website -Name $SITE_NAME `
             -Port 80 `
             -IPAddress '*' `
             -Force | Out-Null
-Ok "site '$SITE_NAME' created (HTTP only — SSL added in 05-ssl.ps1)"
+Ok "site '$SITE_NAME' created (HTTP only -- SSL added in 05-ssl.ps1)"
 
 # Start it (idempotent)
 Start-Website -Name $SITE_NAME -ErrorAction SilentlyContinue
 Ok "site started"
 
-# ── 4. Sanity check ───────────────────────────────────────────────────
+# -- 4. Sanity check ---------------------------------------------------
 Step 'Local sanity check (HTTP)'
 try {
     $r = Invoke-WebRequest -UseBasicParsing "http://127.0.0.1/health" -Headers @{ Host = $HOSTNAME } -TimeoutSec 5
@@ -101,7 +101,7 @@ try {
     Ok 'IIS is reverse-proxying to node correctly'
 } catch {
     Write-Host "  IIS proxy not yet working. Most likely causes:" -ForegroundColor Yellow
-    Write-Host "    1. ARR proxy mode disabled (IIS Manager → server → App Request Routing Cache → Server Proxy Settings → check 'Enable proxy')"
+    Write-Host "    1. ARR proxy mode disabled (IIS Manager -> server -> App Request Routing Cache -> Server Proxy Settings -> check 'Enable proxy')"
     Write-Host "    2. node not running on 127.0.0.1:$BACKEND_PORT (check pm2 status: pm2 list)"
     throw $_
 }

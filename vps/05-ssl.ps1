@@ -1,4 +1,4 @@
-# pickyeat — Issue Let's Encrypt SSL for api.pickyeat.com via Win-ACME
+# pickyeat -- Issue Let's Encrypt SSL for api.pickyeat.com via Win-ACME
 # Adds an HTTPS binding to the existing pickyeat-api IIS site. Does not touch SROS or xenios.in.
 #
 # REQUIREMENT: DNS A record api.pickyeat.com -> 148.66.156.102 must already resolve.
@@ -18,7 +18,7 @@ function Ok($msg)   { Write-Host "  [OK]   $msg" -ForegroundColor Green }
 $HOSTNAME = 'api.pickyeat.com'
 $SITE_NAME = 'pickyeat-api'
 
-# ── 1. Pre-flight: DNS must resolve to this box ───────────────────────
+# -- 1. Pre-flight: DNS must resolve to this box -----------------------
 Step "DNS pre-flight for $HOSTNAME"
 try {
     $rec = Resolve-DnsName $HOSTNAME -Type A -ErrorAction Stop
@@ -32,7 +32,7 @@ try {
     throw "DNS for $HOSTNAME not resolving yet: $_"
 }
 
-# ── 2. Locate Win-ACME ────────────────────────────────────────────────
+# -- 2. Locate Win-ACME ------------------------------------------------
 Step 'Locate Win-ACME'
 $wacs = @(
     "$env:ProgramFiles\win-acme\wacs.exe",
@@ -42,7 +42,7 @@ $wacs = @(
 if (-not $wacs) { throw 'Win-ACME not installed. Run 02-prereqs.ps1 first.' }
 Ok "using $wacs"
 
-# ── 3. Run Win-ACME in unattended mode ────────────────────────────────
+# -- 3. Run Win-ACME in unattended mode --------------------------------
 Step 'Request Let''s Encrypt cert + bind to IIS site'
 # Win-ACME args:
 #   --target manual --host api.pickyeat.com         (specify exact hostname)
@@ -62,7 +62,7 @@ if ($LASTEXITCODE -ne 0) {
 }
 Ok 'Let''s Encrypt cert issued + bound'
 
-# ── 4. Verify HTTPS works ─────────────────────────────────────────────
+# -- 4. Verify HTTPS works ---------------------------------------------
 Step 'Verify HTTPS'
 Start-Sleep -Seconds 2
 try {
@@ -81,13 +81,13 @@ Write-Host @"
 Deploy complete.
 
 Now flip the frontend to live mode:
-  Netlify → Project → Site configuration → Environment variables → set:
+  Netlify -> Project -> Site configuration -> Environment variables -> set:
     NEXT_PUBLIC_API_MODE = live
     NEXT_PUBLIC_API_BASE = https://$HOSTNAME
-  → Deploys → Trigger deploy → Clear cache and deploy site
+  -> Deploys -> Trigger deploy -> Clear cache and deploy site
 
 Then restrict the Google Places API key to source IP 148.66.156.102 in the
-Google Cloud Console (the script can't do this — manual step).
+Google Cloud Console (the script can't do this -- manual step).
 
 Final verification:
   curl https://$HOSTNAME/health
