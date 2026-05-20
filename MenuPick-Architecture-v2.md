@@ -276,12 +276,12 @@ CREATE TABLE groups (
 ### v1.5 (3-6 months)
 - ✅ Group order mode
 - ✅ Native iOS/Android via Capacitor → submit to stores
-- ✅ Premium tier (₹99-199/mo: unlimited scans, group >2, ad-free, calorie tracking)
+- ⚠️ **Premium tier pricing FRIDGED — see `design/monetization.md`.** New plan: ₹49/mo or ₹499/yr. Premium is no longer the primary revenue line; restaurant-side ladder (claim → featured → Xenios POS) is. Original premium pricing of ₹99-199/mo no longer in effect.
 - ✅ Affiliate delivery integration (Zomato/Swiggy)
-- ✅ Restaurant claim program (₹500-1000/mo)
-- ✅ Pairing recommendations
-- ✅ "What is this dish?" explainers
-- ✅ Macro counter / Google Fit + Apple Health sync
+- ⚠️ **Restaurant claim program — see `design/restaurant-flow.md`** for the four-tier ladder (₹499 claim → ₹999 featured → ₹3-5K Xenios). Original flat ₹500-1000/mo replaced.
+- ✅ Pairing recommendations *(moved to free tier per `monetization.md` §2)*
+- ✅ "What is this dish?" explainers *(moved to free tier per `monetization.md` §2)*
+- ✅ Macro counter / Google Fit + Apple Health sync *(premium retains this — `monetization.md` §2)*
 
 ### v2 (6-12 months)
 - Network features: follow friends, see what they order

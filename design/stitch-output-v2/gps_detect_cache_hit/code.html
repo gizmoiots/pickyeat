@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#f6ece4",
+                        "secondary-fixed-dim": "#ffb5a1",
+                        "tertiary": "#006d40",
+                        "secondary-fixed": "#ffdbd1",
+                        "surface-dim": "#e2d8d0",
+                        "secondary-container": "#ff6940",
+                        "inverse-primary": "#ffb59c",
+                        "on-primary-fixed": "#390c00",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#00351d",
+                        "on-primary-fixed-variant": "#832700",
+                        "on-secondary-fixed-variant": "#881f00",
+                        "on-surface": "#1f1b16",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#611400",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#eae1d8",
+                        "on-tertiary-fixed": "#002110",
+                        "surface-container-high": "#f0e7de",
+                        "surface-variant": "#eae1d8",
+                        "outline": "#8c7169",
+                        "primary-container": "#f26b3a",
+                        "tertiary-fixed": "#7afbb1",
+                        "secondary": "#af3009",
+                        "tertiary-container": "#14aa68",
+                        "on-primary-container": "#571700",
+                        "primary-fixed": "#ffdbd0",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-surface": "#34302a",
+                        "surface-bright": "#fff8f3",
+                        "tertiary-fixed-dim": "#5cde97",
+                        "background": "#fff8f3",
+                        "on-tertiary-fixed-variant": "#00522f",
+                        "surface-tint": "#a93705",
+                        "primary": "#a93705",
+                        "inverse-on-surface": "#f9efe6",
+                        "surface": "#fff8f3",
+                        "primary-fixed-dim": "#ffb59c",
+                        "on-surface-variant": "#58413a",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed": "#3b0800",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#fcf2e9",
+                        "on-background": "#1f1b16",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#e0c0b6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "gutter": "12px",
+                        "unit": "4px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "sm": "8px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "body-rg": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "ui-label-sm": ["Plus Jakarta Sans"],
+                        "body-sm": ["Plus Jakarta Sans"],
+                        "ui-label": ["Plus Jakarta Sans"],
+                        "display-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-rg": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                        "display-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "ui-label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "body-sm": ["14px", {"lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "400"}],
+                        "ui-label": ["14px", {"lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "display-md": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .pepper-border {
+            border: 0.5px solid rgba(31, 27, 22, 0.15);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body-rg text-on-surface min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface border-b-[0.5px] border-outline/20 docked full-width top-0 flex justify-between items-center w-full px-margin-mobile py-sm z-50">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full overflow-hidden pepper-border">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="A professional headshot of a person with a warm smile, set against a minimalist light beige background. The lighting is soft and natural, emphasizing a clean and approachable aesthetic that aligns with a premium culinary application. The overall mood is organized and friendly." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRKCVRvzT-qqaZ_x0UAKUKJNp3d934Nrfk38lCIp1g3SuRoNL8snUa5Wja_SD0vnB4CoN4PltRdHAxU0lO2r_Lz385dZ4BF9oA5R-N8xt6z6lgLeJIysyU1smdL26o_AF9k2jXbKDh-xaBTcmDCn5yJf_77psY3vdmxJPi51mxeu3CL9Vpx9-taAmtWMtw8VHYruRGEkhhw-4fqJMkiQvNITzYPKU6rBg3Lx252SsaY2vcK0h31wC1k6xEmmkLkPh3aukUmobghKp3"/>
+</div>
+<span class="font-display-md text-display-md text-primary dark:text-primary-fixed-dim">pickyeat</span>
+</div>
+<div class="transition-all duration-200 active:scale-95 hover:opacity-80">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim">notifications</span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col px-margin-mobile pt-xl pb-xl">
+<!-- Location Detection Card Section -->
+<div class="mt-lg mb-xl">
+<div class="flex flex-col items-center text-center space-y-md">
+<!-- Location Icon with Sprig Dot Motif -->
+<div class="relative inline-block mb-sm">
+<div class="w-16 h-16 rounded-full bg-surface-container-low flex items-center justify-center pepper-border">
+<span class="material-symbols-outlined text-primary text-[32px]">location_on</span>
+</div>
+<div class="absolute -top-1 -right-1 w-4 h-4 bg-[#2BB673] rounded-full border-2 border-surface"></div>
+</div>
+<div class="space-y-xs">
+<p class="font-ui-label text-ui-label text-on-surface-variant uppercase tracking-widest">you're at</p>
+<h1 class="font-display-md text-[26px] text-on-surface font-bold leading-tight">Cafe Mocha</h1>
+<div class="flex items-center justify-center gap-xs">
+<div class="w-1.5 h-1.5 bg-[#2BB673] rounded-full"></div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">47 picks here this month</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Visual Context Card (Bento-style asymmetric layout) -->
+<div class="grid grid-cols-2 gap-gutter mb-xl">
+<div class="col-span-2 h-48 rounded-xl overflow-hidden pepper-border bg-surface-container-low">
+<img class="w-full h-full object-cover" data-alt="A high-angle shot of a beautifully prepared latte with intricate latte art on a minimalist marble table. Beside the coffee is a small, fresh sprig of mint and a clean linen napkin. The lighting is bright and airy, creating a warm, appetizing, and modern kitchen feel with soft shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuClKxIUqK5ioMtvp5RzzD2JAhOtKkR2HkqJV3ir849866YtzyHfvDJdZNFP3k2vyv43balnfgI1NVD4iGJdMYMZxyfaF3YfcxCkCEtkVYaca_8HyTR2MWQYR_EcegKzdlxqdkm1adlBPgYL60sG9A6ffj6ydnWMuthe3Zoa6PYcYDD7Fr92msaetVqKprwGpwrGsqbNiZYOpISbt6B4PoZW5zi9ck_C9uGIzoxr4AFsWCXcQX-FOCgAySfKGb8AF132VQVP4Z2z9Xq9"/>
+</div>
+<div class="col-span-1 h-32 rounded-xl overflow-hidden pepper-border bg-surface-container-low">
+<img class="w-full h-full object-cover" data-alt="An interior view of a modern, minimalist cafe with warm wooden textures and clean white walls. The space is filled with natural light and features organized shelves of coffee beans. The atmosphere is peaceful, sophisticated, and evokes a sense of clarity and comfort." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_WdnlW_NLkhJwwP7sUWGBgQAzRQax_btGIIt-vwnvhZhYqgA6LBxovkB9x46qxf-HZJ7TD8o_tgIkU33KmRfZ9kJa1AxkD-LpKG7b0fW4C0Re_V4Ob8SoUmpO0Niify1f8HyP7BEHI3qpyd-W_GN9QVIAjbSdQDMj-YA4ezYELoriG9L8DE7Ty3kiXoYwTcMtN8Puhg1yEVXReTIhXHk-JYGc6tq3Qt3sQFk1knxKk6zvWUmZd8ASAUhos-iGPzmyv7LJZN5QAV36"/>
+</div>
+<div class="col-span-1 h-32 p-md flex flex-col justify-center rounded-xl pepper-border bg-surface-container-low">
+<span class="font-ui-label-sm text-ui-label-sm text-primary mb-xs">Today's Special</span>
+<p class="font-body-sm text-body-sm font-bold text-on-surface">Cardamom Spiced Brew</p>
+<div class="mt-sm flex -space-x-2">
+<div class="w-6 h-6 rounded-full bg-[#2BB673] flex items-center justify-center text-[10px] text-white font-bold border border-surface">JD</div>
+<div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-[10px] text-white font-bold border border-surface">ML</div>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="mt-auto space-y-md">
+<button class="w-full py-md px-lg bg-[#f26b3a] text-on-primary rounded-full font-ui-label text-ui-label transition-all duration-200 active:scale-95 flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined text-[20px]">restaurant_menu</span>
+                Use saved menu
+            </button>
+<button class="w-full py-sm text-on-surface-variant font-ui-label text-ui-label transition-all duration-200 active:scale-95 flex items-center justify-center">
+                Scan a different menu
+            </button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface dark:bg-surface py-md px-margin-mobile pb-safe border-t-[0.5px] border-outline/20">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim relative after:content-[''] after:w-1.5 after:h-1.5 after:bg-tertiary after:rounded-full after:mt-1 transition-transform duration-200 active:scale-90" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-ui-label-sm text-ui-label-sm">Home</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-dim transition-transform duration-200 active:scale-90" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-ui-label-sm text-ui-label-sm">Profile</span>
+</a>
+</nav>
+</body></html>

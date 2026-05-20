@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>pickyeat - Butter chicken</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container": "#f6ece4",
+                      "secondary-fixed-dim": "#ffb5a1",
+                      "tertiary": "#006d40",
+                      "secondary-fixed": "#ffdbd1",
+                      "surface-dim": "#e2d8d0",
+                      "secondary-container": "#ff6940",
+                      "inverse-primary": "#ffb59c",
+                      "on-primary-fixed": "#390c00",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-container": "#00351d",
+                      "on-primary-fixed-variant": "#832700",
+                      "on-secondary-fixed-variant": "#881f00",
+                      "on-surface": "#1f1b16",
+                      "error-container": "#ffdad6",
+                      "on-secondary-container": "#611400",
+                      "error": "#ba1a1a",
+                      "surface-container-highest": "#eae1d8",
+                      "on-tertiary-fixed": "#002110",
+                      "surface-container-high": "#f0e7de",
+                      "surface-variant": "#eae1d8",
+                      "outline": "#8c7169",
+                      "primary-container": "#f26b3a",
+                      "tertiary-fixed": "#7afbb1",
+                      "secondary": "#af3009",
+                      "tertiary-container": "#14aa68",
+                      "on-primary-container": "#571700",
+                      "primary-fixed": "#ffdbd0",
+                      "surface-container-lowest": "#ffffff",
+                      "inverse-surface": "#34302a",
+                      "surface-bright": "#fff8f3",
+                      "tertiary-fixed-dim": "#5cde97",
+                      "background": "#fff8f3",
+                      "on-tertiary-fixed-variant": "#00522f",
+                      "surface-tint": "#a93705",
+                      "primary": "#a93705",
+                      "inverse-on-surface": "#f9efe6",
+                      "surface": "#fff8f3",
+                      "primary-fixed-dim": "#ffb59c",
+                      "on-surface-variant": "#58413a",
+                      "on-error-container": "#93000a",
+                      "on-secondary-fixed": "#3b0800",
+                      "on-error": "#ffffff",
+                      "surface-container-low": "#fcf2e9",
+                      "on-background": "#1f1b16",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "outline-variant": "#e0c0b6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "20px",
+                      "gutter": "12px",
+                      "unit": "4px",
+                      "md": "16px",
+                      "lg": "24px",
+                      "xl": "32px",
+                      "sm": "8px",
+                      "xs": "4px"
+              },
+              "fontFamily": {
+                      "body-rg": ["Plus Jakarta Sans"],
+                      "display-lg": ["Plus Jakarta Sans"],
+                      "ui-label-sm": ["Plus Jakarta Sans"],
+                      "body-sm": ["Plus Jakarta Sans"],
+                      "ui-label": ["Plus Jakarta Sans"],
+                      "display-md": ["Plus Jakarta Sans"]
+              },
+              "fontSize": {
+                      "body-rg": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                      "display-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "ui-label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                      "body-sm": ["14px", {"lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "400"}],
+                      "ui-label": ["14px", {"lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "display-md": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .sprig-dot {
+            width: 6px;
+            height: 6px;
+            background-color: #2BB673;
+            border-radius: 9999px;
+            display: inline-block;
+        }
+        .pepper-border {
+            border: 0.5px solid rgba(31, 27, 22, 0.15);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-rg selection:bg-primary-fixed">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface border-b-[0.5px] border-outline/20 docked full-width top-0 z-40 sticky">
+<div class="flex justify-between items-center w-full px-margin-mobile py-sm">
+<div class="flex items-center gap-md">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-highest pepper-border">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="A professional and friendly headshot of a person with a warm smile, set against a clean, neutral background. The lighting is soft and flattering, emphasizing a modern and approachable look. The overall aesthetic is minimalist and high-quality, aligning with a warm minimalist UI design system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtsgBrbwIhrfDCBXeaeoKKNL4NDrWYzSavQv3PDRISsEeLZyTgDBAIU9wmIjGSYsjY2Bw7p_6QRtJXrUunGAiCbI6RppSYiMQNhZOiyVTFU6vCbfCfmFGZb8g1XO4NqeYFgk8TgZDMAYsMMdD18mfsoKOS1HNXVWIkeQQEhqIfplhvWLq4chxPFNflnPks8u3wXYnVVpdYWcj2iyG8wL23CEhjr8rwKC3v-mqEFz5vYABYfP0vAAI_9l71qhTQP3_VMo9SXNRYeHUo"/>
+</div>
+<h1 class="font-display-md text-display-md text-primary dark:text-primary-fixed-dim">pickyeat</h1>
+</div>
+<button class="text-on-surface-variant dark:text-on-surface-variant hover:opacity-80 transition-all duration-200 active:scale-95">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</header>
+<main class="pb-32">
+<!-- Hero Dish Photo -->
+<div class="w-full aspect-square overflow-hidden bg-surface-container">
+<img alt="Butter chicken" class="w-full h-full object-cover" data-alt="A top-down, beautifully styled close-up of Butter Chicken in a rustic ceramic bowl. The creamy, vibrant orange-red gravy is garnished with a swirl of fresh cream and bright green coriander. Beside the bowl, a piece of charred garlic naan rests on a clean, light-colored wooden surface. The lighting is bright and natural, creating an appetizing and cozy kitchen atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJYaol3CJKfKNUq5GiKHOqU2WCr0gqJHCclLvP_kmAClHnm7oRYhRfTlQt2AN3MyjSR6WT6S23ohn_-E-TvMuErMYHRnkta63XjHyW3G6GKDjvnZsYrqEJ575wYYnaHMwYfQiss54KOcqD3vXXNP2bRgSSlDrEhGfRdsUkq8zoP-qWHBGZBWjnqBDGvH0GU-o2nAM3vGASDJ-eSkFvt_UkSmFtssOw85LoSAIffR0730yz7Qz3F90VKcllpmEyivac1atCLrs8_-UA"/>
+</div>
+<!-- Dish Details Content -->
+<div class="px-margin-mobile mt-lg">
+<div class="flex justify-between items-baseline mb-sm">
+<h2 class="text-[30px] font-display-lg text-on-surface leading-none">Butter chicken<span class="sprig-dot ml-xs align-top mt-2"></span></h2>
+<span class="text-display-md font-display-md text-primary">₹420</span>
+</div>
+<div class="flex flex-wrap gap-sm mb-lg">
+<div class="inline-flex items-center gap-xs px-md py-xs rounded-full bg-surface pepper-border">
+<span class="sprig-dot"></span>
+<span class="text-ui-label-sm font-ui-label-sm text-on-surface">Three reviews mention this</span>
+</div>
+<div class="inline-flex items-center px-md py-xs rounded-full bg-surface pepper-border">
+<span class="text-ui-label-sm font-ui-label-sm text-on-surface">~520 cal estimated</span>
+</div>
+<div class="inline-flex items-center px-md py-xs rounded-full bg-surface pepper-border">
+<span class="text-ui-label-sm font-ui-label-sm text-on-surface">high protein</span>
+</div>
+<div class="inline-flex items-center px-md py-xs rounded-full bg-surface pepper-border">
+<span class="text-ui-label-sm font-ui-label-sm text-on-surface">gluten-free</span>
+</div>
+</div>
+<!-- Bento Layout for additional info -->
+<div class="grid grid-cols-2 gap-gutter">
+<div class="bg-surface-container-low rounded-xl pepper-border p-md flex flex-col justify-between h-32">
+<span class="material-symbols-outlined text-primary">restaurant</span>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Signature North Indian delicacy, slow-cooked in a silky tomato and butter gravy.</p>
+</div>
+<div class="bg-surface-container-low rounded-xl pepper-border p-md flex flex-col justify-between h-32">
+<span class="material-symbols-outlined text-tertiary">workspace_premium</span>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Top-rated by users following a high-protein diet.</p>
+</div>
+</div>
+</div>
+<!-- Action Section -->
+<div class="fixed bottom-0 left-0 w-full bg-surface border-t-[0.5px] border-outline/20 px-margin-mobile py-lg z-30 pb-safe">
+<div class="flex flex-col gap-md max-w-md mx-auto">
+<button class="w-full bg-primary-container text-on-primary-container py-md rounded-xl font-ui-label text-ui-label hover:opacity-80 transition-all active:scale-95">
+                    I ordered this
+                </button>
+<button class="w-full text-on-surface-variant font-ui-label text-ui-label py-xs hover:opacity-80 transition-all">
+                    Skip
+                </button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Hidden on focus screens as per mandate, but included if top-level) -->
+<!-- Since this is a Detail screen, per rules: "suppress the navigation shell if the page intent is ... sub-page featuring a 'Back' action" -->
+<!-- However, the user might want it as a primary destination. I will include it as fixed bottom-0 but the action section sits above it. -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface dark:bg-surface py-md px-margin-mobile pb-safe border-t-[0.5px] border-outline/20 hidden">
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low transition-transform duration-200 active:scale-90">
+<span class="material-symbols-outlined">home</span>
+<span class="font-ui-label-sm text-ui-label-sm mt-1">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low transition-transform duration-200 active:scale-90">
+<span class="material-symbols-outlined">person</span>
+<span class="font-ui-label-sm text-ui-label-sm mt-1">Profile</span>
+</button>
+</nav>
+</body></html>

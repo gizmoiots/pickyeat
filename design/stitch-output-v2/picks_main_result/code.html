@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .sprig-dot {
+            width: 6px;
+            height: 6px;
+            background-color: #2BB673;
+            border-radius: 9999px;
+            display: inline-block;
+        }
+        /* Custom scrollbar suppression */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#f6ece4",
+                        "secondary-fixed-dim": "#ffb5a1",
+                        "tertiary": "#006d40",
+                        "secondary-fixed": "#ffdbd1",
+                        "surface-dim": "#e2d8d0",
+                        "secondary-container": "#ff6940",
+                        "inverse-primary": "#ffb59c",
+                        "on-primary-fixed": "#390c00",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#00351d",
+                        "on-primary-fixed-variant": "#832700",
+                        "on-secondary-fixed-variant": "#881f00",
+                        "on-surface": "#1f1b16",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#611400",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#eae1d8",
+                        "on-tertiary-fixed": "#002110",
+                        "surface-container-high": "#f0e7de",
+                        "surface-variant": "#eae1d8",
+                        "outline": "#8c7169",
+                        "primary-container": "#f26b3a",
+                        "tertiary-fixed": "#7afbb1",
+                        "secondary": "#af3009",
+                        "tertiary-container": "#14aa68",
+                        "on-primary-container": "#571700",
+                        "primary-fixed": "#ffdbd0",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-surface": "#34302a",
+                        "surface-bright": "#fff8f3",
+                        "tertiary-fixed-dim": "#5cde97",
+                        "background": "#fff8f3",
+                        "on-tertiary-fixed-variant": "#00522f",
+                        "surface-tint": "#a93705",
+                        "primary": "#a93705",
+                        "inverse-on-surface": "#f9efe6",
+                        "surface": "#fff8f3",
+                        "primary-fixed-dim": "#ffb59c",
+                        "on-surface-variant": "#58413a",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed": "#3b0800",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#fcf2e9",
+                        "on-background": "#1f1b16",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#e0c0b6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "gutter": "12px",
+                        "unit": "4px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "sm": "8px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "body-rg": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "ui-label-sm": ["Plus Jakarta Sans"],
+                        "body-sm": ["Plus Jakarta Sans"],
+                        "ui-label": ["Plus Jakarta Sans"],
+                        "display-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-rg": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                        "display-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "ui-label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "body-sm": ["14px", {"lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "400"}],
+                        "ui-label": ["14px", {"lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "display-md": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile py-sm border-b-[0.5px] border-outline/20 transition-all duration-200 active:scale-95">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full overflow-hidden border-[0.5px] border-on-surface/10 bg-surface-container">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="A professional close-up portrait of a young man with a friendly expression in a modern office environment. The lighting is soft and natural, emphasizing a clean and approachable minimalist aesthetic. The background is slightly blurred with warm coconut and cream tones, aligning with a premium user profile interface style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo6YFsh_wMCmRAKkZ6200RBPAcIuZVKfwyO1ocnbAmFM4coZ9X_ybSGdL4YlkFoIlpvT5o3Sm8Kgc43dNSzouaWtt0xXqJubXeIV7lsY4YHDm1oiL-9ZFsMeSzAOIe37gINgPjyMTZHcqy_LjuUS_XDMr6J6sP6iGBqQap8RFQZ1tiPzUx2Ee030VrlsA23vU8HqIzQb5-mgkP-sXqLOOnEHcg68K_wEJnyvJ0j1_piRGKBT1D9aCc7_1MEl36gsHuA4ThitmClRMI"/>
+</div>
+<h1 class="font-display-md text-display-md text-primary dark:text-primary-fixed-dim">pickyeat</h1>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:opacity-80 transition-all duration-200 active:scale-95">
+            notifications
+        </button>
+</header>
+<main class="pt-24 px-margin-mobile">
+<!-- Location Header -->
+<section class="mb-lg">
+<div class="flex items-center gap-xs text-on-surface-variant mb-xs">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="font-ui-label-sm text-ui-label-sm">Pune, India</span>
+</div>
+<h2 class="font-display-md text-display-md text-on-surface leading-tight">Cafe Mocha, FC Road, Pune<span class="text-tertiary ml-1">.</span></h2>
+</section>
+<!-- Vertical Dish Cards -->
+<div class="flex flex-col gap-lg">
+<!-- Card 1: Butter Chicken -->
+<div class="bg-surface-container-low border-[0.5px] border-on-surface/15 rounded-xl overflow-hidden relative transition-all duration-200 active:scale-[0.98]">
+<div class="absolute top-4 right-4 z-10">
+<span class="sprig-dot"></span>
+</div>
+<div class="aspect-[16/9] w-full bg-surface-container flex items-center justify-center relative">
+<span class="material-symbols-outlined text-primary-container text-4xl">soup_kitchen</span>
+<!-- Label Overlay -->
+<div class="absolute bottom-3 left-3 flex gap-2">
+<div class="bg-surface/90 backdrop-blur-sm px-3 py-1 rounded-full border-[0.5px] border-on-surface/10 flex items-center gap-2">
+<span class="sprig-dot"></span>
+<span class="font-ui-label-sm text-ui-label-sm text-on-surface">crowd favorite</span>
+</div>
+</div>
+</div>
+<div class="p-md">
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-display-md text-display-md text-on-surface">Butter chicken</h3>
+<span class="font-display-md text-display-md text-primary">₹420</span>
+</div>
+<p class="font-body-rg text-body-rg text-on-surface-variant">
+                        matches your high-protein goal + 3 reviews call it the best in Pune
+                    </p>
+<div class="mt-md flex justify-end">
+<button class="bg-primary text-on-primary font-ui-label text-ui-label px-lg py-sm rounded-xl transition-all duration-200 active:scale-95">
+                            Add to Pick
+                        </button>
+</div>
+</div>
+</div>
+<!-- Card 2: Paneer Tikka Masala -->
+<div class="bg-surface-container-low border-[0.5px] border-on-surface/15 rounded-xl overflow-hidden relative transition-all duration-200 active:scale-[0.98]">
+<div class="absolute top-4 right-4 z-10">
+<span class="sprig-dot"></span>
+</div>
+<div class="aspect-[16/9] w-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container text-4xl">soup_kitchen</span>
+</div>
+<div class="p-md">
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-display-md text-display-md text-on-surface">Paneer tikka masala</h3>
+<span class="font-display-md text-display-md text-primary">₹360</span>
+</div>
+<p class="font-body-rg text-body-rg text-on-surface-variant">
+                        lighter pick — you wanted under 500 cal
+                    </p>
+<div class="mt-md flex justify-end">
+<button class="bg-surface border-[0.5px] border-on-surface text-on-surface font-ui-label text-ui-label px-lg py-sm rounded-xl transition-all duration-200 active:scale-95">
+                            Add to Pick
+                        </button>
+</div>
+</div>
+</div>
+<!-- Card 3: Dal Makhani -->
+<div class="bg-surface-container-low border-[0.5px] border-on-surface/15 rounded-xl overflow-hidden relative transition-all duration-200 active:scale-[0.98]">
+<div class="absolute top-4 right-4 z-10">
+<span class="sprig-dot"></span>
+</div>
+<div class="aspect-[16/9] w-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container text-4xl">soup_kitchen</span>
+</div>
+<div class="p-md">
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-display-md text-display-md text-on-surface">Dal makhani</h3>
+<span class="font-display-md text-display-md text-primary">₹280</span>
+</div>
+<p class="font-body-rg text-body-rg text-on-surface-variant">
+                        pairs with the butter chicken everyone else picked
+                    </p>
+<div class="mt-md flex justify-end">
+<button class="bg-surface border-[0.5px] border-on-surface text-on-surface font-ui-label text-ui-label px-lg py-sm rounded-xl transition-all duration-200 active:scale-95">
+                            Add to Pick
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-surface dark:bg-surface py-md px-margin-mobile pb-safe border-t-[0.5px] border-outline/20">
+<!-- Home Tab (Active) -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim relative after:content-[''] after:w-1.5 after:h-1.5 after:bg-tertiary after:rounded-full after:mt-1 transition-transform duration-200 active:scale-90" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-ui-label-sm text-ui-label-sm">Home</span>
+</a>
+<!-- Profile Tab -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-dim transition-transform duration-200 active:scale-90" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-ui-label-sm text-ui-label-sm">Profile</span>
+</a>
+</nav>
+</body></html>

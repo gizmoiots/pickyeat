@@ -18,6 +18,8 @@ out/
 **/.env
 **/.env.local
 **/.env.*.local
+secrets.env
+**/secrets.env
 
 # logs
 *.log

@@ -2,6 +2,7 @@
 // Claude rank, shape — wired together with a timeout and a fallback.
 // See design/algorithm.md §6.
 
+import Anthropic from "@anthropic-ai/sdk";
 import { isMockMode } from "../db.js";
 import { dishes } from "../mockData.js";
 import { hardFilter } from "./hardFilter.js";
@@ -23,31 +24,71 @@ type Dish = {
 };
 type Pick = { dish: Dish; reason: string };
 
-export async function visionScanMenu(_imageBase64: string): Promise<Dish[]> {
-  if (isMockMode()) return dishes as Dish[];
+let _client: Anthropic | null = null;
+function client(): Anthropic {
+  if (!_client) {
+    const key = process.env.ANTHROPIC_API_KEY;
+    if (!key) throw new Error("ANTHROPIC_API_KEY not set");
+    _client = new Anthropic({ apiKey: key });
+  }
+  return _client;
+}
 
-  // Live mode — uncomment once @anthropic-ai/sdk is installed.
-  // npm install @anthropic-ai/sdk
-  //
-  // const Anthropic = (await import("@anthropic-ai/sdk")).default;
-  // const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY! });
-  // const r = await client.messages.create({
-  //   model: "claude-sonnet-4-6",
-  //   max_tokens: 4000,
-  //   messages: [{
-  //     role: "user",
-  //     content: [
-  //       { type: "image", source: { type: "base64", media_type: "image/jpeg", data: _imageBase64 } },
-  //       { type: "text", text: `Extract every dish from this restaurant menu. Return JSON only:
-  //         { "dishes": [ { "id": "<slug>", "name": "<name>", "priceInr": <number>, "description": "<line>", "estCalories": <number|null>, "allergens": ["dairy"|"gluten"|...], "diet": ["veg"|"vegan"|"jain"|null] } ] }
-  //         Be conservative on allergen tags. Estimate calories; null if unsure.` }
-  //     ]
-  //   }]
-  // });
-  // const text = r.content[0].type === "text" ? r.content[0].text : "";
-  // return JSON.parse(text.match(/\{[\s\S]*\}/)![0]).dishes;
+const VISION_PROMPT = `Extract every dish from this restaurant menu photo. Return strict JSON only:
 
-  throw new Error("claude.visionScanMenu live mode not wired — install @anthropic-ai/sdk");
+{ "dishes": [
+    { "id": "<short slug, lowercase, underscores>",
+      "name": "<dish name as printed>",
+      "priceInr": <integer rupees, or null if not visible>,
+      "description": "<one-line description if printed, else empty>",
+      "estCalories": <integer estimate from typical recipe, or null>,
+      "estMacros": { "protein": <g>, "carbs": <g>, "fat": <g> },
+      "allergens": ["dairy"|"nuts"|"gluten"|"eggs"|"shellfish"|"soy"],
+      "diet": ["veg"|"vegan"|"jain"|"gluten-free"] }
+  ] }
+
+Rules:
+- One entry per visible dish. Skip categories/section headers.
+- Be conservative on allergens — only mark when obvious from name (paneer→dairy, naan→gluten).
+- Estimate calories and macros from typical Indian/regional recipes. Null if truly unsure.
+- For veg dishes set diet:["veg"]. Vegan only if no dairy/eggs explicit.
+- Indian menus often have ₹ as price prefix. Strip and use integer.`;
+
+export async function visionScanMenu(imageBase64: string): Promise<Dish[]> {
+  if (isMockMode() || !process.env.ANTHROPIC_API_KEY) {
+    return dishes as Dish[];
+  }
+
+  // Strip any data: URL prefix the caller forgot to remove
+  const b64 = imageBase64.replace(/^data:image\/\w+;base64,/, "");
+
+  const r = await client().messages.create({
+    model: process.env.ANTHROPIC_MODEL ?? "claude-sonnet-4-6",
+    max_tokens: 4000,
+    messages: [
+      {
+        role: "user",
+        content: [
+          {
+            type: "image",
+            source: {
+              type: "base64",
+              media_type: "image/jpeg",
+              data: b64
+            }
+          },
+          { type: "text", text: VISION_PROMPT }
+        ]
+      }
+    ]
+  });
+
+  const text = r.content[0].type === "text" ? r.content[0].text : "";
+  const match = text.match(/\{[\s\S]*\}/);
+  if (!match) throw new Error("vision returned no JSON");
+  const json = JSON.parse(match[0]);
+  if (!Array.isArray(json.dishes)) throw new Error("vision returned no dishes array");
+  return json.dishes as Dish[];
 }
 
 export async function recommend(

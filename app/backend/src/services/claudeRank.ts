@@ -1,6 +1,7 @@
 // Stage 2 of the picking algorithm. Single Claude call that returns three
 // {dishId, reason} pairs. See design/algorithm.md §4.
 
+import Anthropic from "@anthropic-ai/sdk";
 import { isMockMode } from "../db.js";
 
 type Dish = {
@@ -70,8 +71,18 @@ Ranking intent (priority order):
 Output strict JSON only:
 {"picks":[{"dishId":"<id from menu>","reason":"<sentence>"}]}`;
 
+let _client: Anthropic | null = null;
+function client(): Anthropic {
+  if (!_client) {
+    const key = process.env.ANTHROPIC_API_KEY;
+    if (!key) throw new Error("ANTHROPIC_API_KEY not set");
+    _client = new Anthropic({ apiKey: key });
+  }
+  return _client;
+}
+
 export async function rankWithClaude(ctx: RankContext): Promise<RankedPick[]> {
-  if (isMockMode()) {
+  if (isMockMode() || !process.env.ANTHROPIC_API_KEY) {
     return [
       {
         dishId: ctx.menu[0]?.id ?? "dish_unknown",
@@ -88,25 +99,19 @@ export async function rankWithClaude(ctx: RankContext): Promise<RankedPick[]> {
     ];
   }
 
-  // Live mode — uncomment once @anthropic-ai/sdk is installed.
-  // npm install @anthropic-ai/sdk
-  //
-  // const Anthropic = (await import("@anthropic-ai/sdk")).default;
-  // const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY! });
-  //
-  // const userMessage = buildUserMessage(ctx);
-  // const r = await client.messages.create({
-  //   model: "claude-sonnet-4-6",
-  //   max_tokens: 800,
-  //   system: SYSTEM_PROMPT,
-  //   messages: [{ role: "user", content: userMessage }]
-  // });
-  //
-  // const text = r.content[0].type === "text" ? r.content[0].text : "";
-  // const json = JSON.parse(text.match(/\{[\s\S]*\}/)![0]);
-  // return json.picks;
+  const r = await client().messages.create({
+    model: process.env.ANTHROPIC_MODEL ?? "claude-sonnet-4-6",
+    max_tokens: 800,
+    system: SYSTEM_PROMPT,
+    messages: [{ role: "user", content: buildUserMessage(ctx) }]
+  });
 
-  throw new Error("claudeRank.rank live mode not wired — install @anthropic-ai/sdk and uncomment");
+  const text = r.content[0].type === "text" ? r.content[0].text : "";
+  const match = text.match(/\{[\s\S]*\}/);
+  if (!match) throw new Error("claude returned no JSON");
+  const json = JSON.parse(match[0]);
+  if (!Array.isArray(json.picks)) throw new Error("claude returned no picks array");
+  return json.picks;
 }
 
 function buildUserMessage(ctx: RankContext): string {

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#f6ece4",
+                    "secondary-fixed-dim": "#ffb5a1",
+                    "tertiary": "#006d40",
+                    "secondary-fixed": "#ffdbd1",
+                    "surface-dim": "#e2d8d0",
+                    "secondary-container": "#ff6940",
+                    "inverse-primary": "#ffb59c",
+                    "on-primary-fixed": "#390c00",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-container": "#00351d",
+                    "on-primary-fixed-variant": "#832700",
+                    "on-secondary-fixed-variant": "#881f00",
+                    "on-surface": "#1f1b16",
+                    "error-container": "#ffdad6",
+                    "on-secondary-container": "#611400",
+                    "error": "#ba1a1a",
+                    "surface-container-highest": "#eae1d8",
+                    "on-tertiary-fixed": "#002110",
+                    "surface-container-high": "#f0e7de",
+                    "surface-variant": "#eae1d8",
+                    "outline": "#8c7169",
+                    "primary-container": "#f26b3a",
+                    "tertiary-fixed": "#7afbb1",
+                    "secondary": "#af3009",
+                    "tertiary-container": "#14aa68",
+                    "on-primary-container": "#571700",
+                    "primary-fixed": "#ffdbd0",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#34302a",
+                    "surface-bright": "#fff8f3",
+                    "tertiary-fixed-dim": "#5cde97",
+                    "background": "#fff8f3",
+                    "on-tertiary-fixed-variant": "#00522f",
+                    "surface-tint": "#a93705",
+                    "primary": "#a93705",
+                    "inverse-on-surface": "#f9efe6",
+                    "surface": "#fff8f3",
+                    "primary-fixed-dim": "#ffb59c",
+                    "on-surface-variant": "#58413a",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed": "#3b0800",
+                    "on-error": "#ffffff",
+                    "surface-container-low": "#fcf2e9",
+                    "on-background": "#1f1b16",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "outline-variant": "#e0c0b6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "gutter": "12px",
+                    "unit": "4px",
+                    "md": "16px",
+                    "lg": "24px",
+                    "xl": "32px",
+                    "sm": "8px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "body-rg": ["Plus Jakarta Sans"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "ui-label-sm": ["Plus Jakarta Sans"],
+                    "body-sm": ["Plus Jakarta Sans"],
+                    "ui-label": ["Plus Jakarta Sans"],
+                    "display-md": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "body-rg": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                    "display-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "ui-label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "body-sm": ["14px", {"lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "400"}],
+                    "ui-label": ["14px", {"lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "display-md": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .sprig-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #2BB673;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .saffron-half-disc {
+            width: 80px;
+            height: 40px;
+            background-color: #f26b3a; /* Primary Container / Saffron */
+            border-radius: 80px 80px 0 0;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-rg min-h-screen flex flex-col">
+<!-- Splash Content Area -->
+<main class="flex-grow flex flex-col items-center justify-center px-margin-mobile">
+<!-- Logo Lockup -->
+<div class="flex flex-col items-center gap-lg">
+<div class="relative flex flex-col items-center">
+<!-- Saffron Half-Disc -->
+<div class="saffron-half-disc mb-xs"></div>
+<!-- Brand Text Anchor -->
+<h1 class="font-display-lg text-display-lg text-primary tracking-tighter">
+                    pickyeat<span class="sprig-dot ml-xs mb-1"></span>
+</h1>
+</div>
+<!-- Eyebrow Text -->
+<p class="font-ui-label text-ui-label text-on-surface-variant tracking-widest uppercase">
+                scan · pick · eat
+            </p>
+</div>
+</main>
+<!-- Bottom Actions Area -->
+<footer class="p-margin-mobile pb-xl">
+<div class="max-w-md mx-auto flex flex-col items-center gap-md">
+<!-- Information Text (Warm Minimalist Context) -->
+<p class="font-body-sm text-body-sm text-center text-on-surface-variant px-md opacity-70">
+                To find the best local ingredients and menus near you, we need to know where you are.
+            </p>
+<!-- Saffron Pill CTA -->
+<button class="w-full h-[56px] bg-primary-container text-on-primary-container font-ui-label text-ui-label rounded-full flex items-center justify-center transition-all duration-200 active:scale-95 border-none shadow-none">
+                Allow location
+            </button>
+</div>
+</footer>
+<!-- Imagery Decoration (Subtle Background Detail) -->
+<div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none opacity-20">
+<div class="absolute -top-20 -left-20 w-64 h-64 border-[0.5px] border-outline rounded-full"></div>
+<div class="absolute top-1/2 -right-32 w-80 h-80 border-[0.5px] border-outline rounded-full"></div>
+</div>
+</body></html>
