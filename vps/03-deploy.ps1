@@ -100,12 +100,17 @@ SWIGGY_AFFILIATE_CODE=PICKYEAT
 # -- 4. Register with pm2 --------------------------------------------
 Step "Register pm2 process '$PM2_NAME' on port $PORT"
 
-# Stop+delete any previous instance (only pickyeat -- not SROS)
-& $PM2 delete $PM2_NAME 2>$null | Out-Null
+# Stop+delete any previous instance (only pickyeat -- not SROS).
+# On first run there's nothing to delete; pm2 writes to stderr which PowerShell 5
+# treats as terminating under ErrorActionPreference=Stop. cmd.exe swallows both streams cleanly.
+cmd.exe /c "`"$PM2`" delete `"$PM2_NAME`" 1>nul 2>nul"
+$Global:LASTEXITCODE = 0
 
-# Start
+# Start. NOTE: do NOT use `pm2 start npm -- start` on Windows — pm2 hands npm.cmd
+# to Node, which tries to parse the batch file as JS and crashes. Run the compiled
+# entrypoint directly instead.
 Push-Location $APP_DIR
-& $PM2 start "npm" --name $PM2_NAME -- start
+& $PM2 start "dist/index.js" --name $PM2_NAME --cwd $APP_DIR
 Pop-Location
 
 & $PM2 save
