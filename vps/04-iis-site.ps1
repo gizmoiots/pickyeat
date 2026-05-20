@@ -38,18 +38,23 @@ if ($srosSite) {
 Step "Create site root at $SITE_ROOT"
 New-Item -ItemType Directory -Path $SITE_ROOT -Force | Out-Null
 
+# NOTE: use 'localhost' not '127.0.0.1' for the rewrite target -- on this
+# Windows Server, ARR hangs on the IPv4 literal but works with 'localhost'.
+# webSocket enabled + X-Forwarded-For mirror the working SROS site config.
 $webConfigXml = @"
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
   <system.webServer>
+    <webSocket enabled="true" />
     <rewrite>
       <rules>
         <rule name="ReverseProxyToNode" stopProcessing="true">
           <match url="(.*)" />
-          <action type="Rewrite" url="http://127.0.0.1:$BACKEND_PORT/{R:1}" />
+          <action type="Rewrite" url="http://localhost:$BACKEND_PORT/{R:1}" />
           <serverVariables>
-            <set name="HTTP_X_FORWARDED_HOST" value="{HTTP_HOST}" />
             <set name="HTTP_X_FORWARDED_PROTO" value="https" />
+            <set name="HTTP_X_FORWARDED_FOR" value="{REMOTE_ADDR}" />
+            <set name="HTTP_X_FORWARDED_HOST" value="{HTTP_HOST}" />
           </serverVariables>
         </rule>
       </rules>
@@ -59,11 +64,6 @@ $webConfigXml = @"
         <requestLimits maxAllowedContentLength="20971520" />
       </requestFiltering>
     </security>
-    <httpProtocol>
-      <customHeaders>
-        <add name="X-Powered-By" value="pickyeat" />
-      </customHeaders>
-    </httpProtocol>
   </system.webServer>
 </configuration>
 "@
@@ -72,20 +72,32 @@ Ok "web.config written"
 
 # Allow rewrite to set server variables (one-time, server level -- same setting SROS already uses)
 $allowed = (Get-WebConfiguration 'system.webServer/rewrite/allowedServerVariables' -PSPath 'MACHINE/WEBROOT/APPHOST').Collection | ForEach-Object { $_.name }
-foreach ($v in 'HTTP_X_FORWARDED_HOST','HTTP_X_FORWARDED_PROTO') {
+foreach ($v in 'HTTP_X_FORWARDED_HOST','HTTP_X_FORWARDED_PROTO','HTTP_X_FORWARDED_FOR') {
     if ($allowed -notcontains $v) {
         Add-WebConfiguration 'system.webServer/rewrite/allowedServerVariables' -PSPath 'MACHINE/WEBROOT/APPHOST' -Value @{ name = $v }
         Write-Host "  allowed server variable: $v"
     }
 }
 
-# -- 3. Create the IIS site bound on HTTP only (port 80, hostname-scoped) --
+# -- 3a. Create a dedicated application pool first.
+# New-Website does NOT auto-create one on every IIS version; without an app pool
+# requests hang because there's no worker process to dispatch to.
+Step "Create application pool $SITE_NAME"
+if (-not (Get-Item "IIS:\AppPools\$SITE_NAME" -ErrorAction SilentlyContinue)) {
+    New-WebAppPool -Name $SITE_NAME -Force | Out-Null
+}
+Set-ItemProperty "IIS:\AppPools\$SITE_NAME" -Name 'managedRuntimeVersion' -Value ''        # "No Managed Code"
+Set-ItemProperty "IIS:\AppPools\$SITE_NAME" -Name 'startMode' -Value 'AlwaysRunning'
+Ok "app pool '$SITE_NAME' ready (No Managed Code, AlwaysRunning)"
+
+# -- 3b. Create the IIS site bound on HTTP only (port 80, hostname-scoped) --
 Step "Create IIS site $SITE_NAME"
 New-Website -Name $SITE_NAME `
             -PhysicalPath $SITE_ROOT `
             -HostHeader $HOSTNAME `
             -Port 80 `
             -IPAddress '*' `
+            -ApplicationPool $SITE_NAME `
             -Force | Out-Null
 Ok "site '$SITE_NAME' created (HTTP only -- SSL added in 05-ssl.ps1)"
 
