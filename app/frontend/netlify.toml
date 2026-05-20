@@ -1,0 +1,11 @@
+# Netlify config for the pickyeat frontend.
+# Tells Netlify to use @netlify/plugin-nextjs which handles SSR routes,
+# image optimization, and middleware. Without this, Netlify serves only
+# static pre-rendered output and SSR routes 404.
+
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
