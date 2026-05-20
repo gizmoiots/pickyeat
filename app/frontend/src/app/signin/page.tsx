@@ -2,15 +2,26 @@
 
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { AppShell } from "@/components/AppShell";
 import { EyebrowLabel } from "@/components/EyebrowLabel";
 import { PrimaryButton } from "@/components/PrimaryButton";
 
 // Phone OTP sign-in. Used both as the standalone /signin page and as the
 // landing after the free-tier scan cap triggers.
+//
+// Wrapped in Suspense because useSearchParams() requires it for static export
+// in Next 14 (otherwise next build fails at pre-render).
 
 export default function SignInPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-coconut" />}>
+      <SignInInner />
+    </Suspense>
+  );
+}
+
+function SignInInner() {
   const router = useRouter();
   const search = useSearchParams();
   const returnTo = search.get("returnTo") ?? "/picks";
