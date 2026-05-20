@@ -34,12 +34,38 @@ try {
 
 # -- 2. Locate Win-ACME ------------------------------------------------
 Step 'Locate Win-ACME'
-$wacs = @(
-    "$env:ProgramFiles\win-acme\wacs.exe",
-    'C:\Tools\win-acme\wacs.exe'
-) | Where-Object { Test-Path $_ } | Select-Object -First 1
 
-if (-not $wacs) { throw 'Win-ACME not installed. Run 02-prereqs.ps1 first.' }
+$searchPaths = @(
+    "$env:ProgramFiles\win-acme\wacs.exe",
+    "${env:ProgramFiles(x86)}\win-acme\wacs.exe",
+    'C:\Tools\win-acme\wacs.exe',
+    'C:\win-acme\wacs.exe',
+    "$env:LOCALAPPDATA\win-acme\wacs.exe",
+    'C:\Program Files (x86)\Plesk\admin\bin\wacs.exe'
+)
+
+$wacs = $null
+foreach ($p in $searchPaths) {
+    if (Test-Path $p) { $wacs = $p; break }
+}
+
+if (-not $wacs) {
+    Write-Host '  Not in any standard location. Scanning C:\ for wacs.exe (may take ~30 sec)...' -ForegroundColor Yellow
+    $found = Get-ChildItem -Path C:\ -Filter wacs.exe -Recurse -ErrorAction SilentlyContinue -Force `
+        | Select-Object -First 1
+    if ($found) { $wacs = $found.FullName }
+}
+
+if (-not $wacs) {
+    throw @'
+Win-ACME not found anywhere on C:\.
+Options:
+  1. Install fresh: download https://github.com/win-acme/win-acme/releases/latest
+     and extract to C:\Tools\win-acme\, then re-run this script.
+  2. If you use Plesk SSL It instead: add api.pickyeat.com as a Plesk domain
+     and issue the cert from the Plesk UI rather than this script.
+'@
+}
 Ok "using $wacs"
 
 # -- 3. Run Win-ACME in unattended mode --------------------------------
